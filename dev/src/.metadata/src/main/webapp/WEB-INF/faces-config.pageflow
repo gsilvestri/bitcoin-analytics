@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14120911436010" configfile="/bitcoin-analytics/src/main/webapp/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="home.xhtml" x="338" y="562" id="pf14120952207901" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" outlinks="pf14120952207902" inlinks="pf14120952207903 pf14120952207914 pf14120952207915" path="/home.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="selectFile.xhtml" x="554" y="562" id="pf14120952207916" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" outlinks="pf14120952207917" inlinks="pf14120952207902" path="/selectFile.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="*" x="122" y="178" id="pf14120952207918" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf14120952207903 pf14120952207919" path="/*"/>
+  <nodes xsi:type="pageflow:PFPage" name="userForm.xhtml" x="338" y="178" id="pf141209522079110" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf141209522079111 pf141209522079112" inlinks="pf14120952207919" path="/userForm.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="admin/users.xhtml" x="554" y="178" id="pf141209522079113" referenceLink="//@navigationRule.8/@navigationCase.0/@toViewId|" outlinks="pf141209522079114" inlinks="pf141209522079111 pf141209522079112 pf141209522079114" path="/admin/users.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="showFile.xhtml" x="770" y="562" id="pf141209522079115" referenceLink="//@navigationRule.4/@navigationCase.0/@toViewId|" inlinks="pf14120952207917" path="/showFile.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="signup.xhtml" x="122" y="946" id="pf141209522079116" referenceLink="//@navigationRule.5/@fromViewId|" outlinks="pf141209522079117" path="/signup.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="login" x="338" y="1138" id="pf141209522079118" referenceLink="//@navigationRule.6/@navigationCase.0/@toViewId|" inlinks="pf141209522079117 pf141209522079119" path="/login"/>
+  <nodes xsi:type="pageflow:PFPage" name="passwordHint.xhtml" x="122" y="1330" id="pf141209522079120" referenceLink="//@navigationRule.6/@fromViewId|" outlinks="pf141209522079119" path="/passwordHint.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="admin/reload.xhtml" x="122" y="562" id="pf141209522079121" referenceLink="//@navigationRule.7/@fromViewId|" outlinks="pf14120952207914" path="/admin/reload.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="arbitrage.xhtml" id="pf141209522079122" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf14120952207915" path="/arbitrage.xhtml"/>
+  <links id="pf14120952207902" target="pf14120952207916" source="pf14120952207901" outcome="selectFile" redirect="true"/>
+  <links id="pf14120952207903" target="pf14120952207901" source="pf14120952207918" outcome="home" redirect="true"/>
+  <links id="pf14120952207919" target="pf141209522079110" source="pf14120952207918" outcome="editProfile"/>
+  <links id="pf141209522079111" target="pf141209522079113" source="pf141209522079110" outcome="cancel" redirect="true"/>
+  <links id="pf141209522079112" target="pf141209522079113" source="pf141209522079110" outcome="list" redirect="true"/>
+  <links id="pf14120952207917" target="pf141209522079115" source="pf14120952207916" outcome="success"/>
+  <links id="pf141209522079117" target="pf141209522079118" source="pf141209522079116" outcome="cancel" redirect="true"/>
+  <links id="pf141209522079119" target="pf141209522079118" source="pf141209522079120" outcome="success" redirect="true"/>
+  <links id="pf14120952207914" target="pf14120952207901" source="pf141209522079121" outcome="success" redirect="true"/>
+  <links id="pf141209522079114" target="pf141209522079113" source="pf141209522079113" outcome="success" redirect="true">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf14120952207915" target="pf14120952207901" source="pf141209522079122" outcome="home" redirect="true"/>
+</pageflow:Pageflow>
