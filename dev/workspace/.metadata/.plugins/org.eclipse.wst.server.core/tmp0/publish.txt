@@ -1,5 +1,5 @@
 #Tomcat publish data
-#Thu Sep 25 14:53:33 CEST 2014
+#Tue Sep 30 20:14:02 CEST 2014
 org.eclipse.jst.jee.server\:/binary\:/home/zackko/.m2/repository/org/springframework/spring-web/4.0.0.RELEASE/spring-web-4.0.0.RELEASE.jar=/home/zackko/Applications/tomcat7/webapps/bitcoin-analytics/WEB-INF/lib/spring-web-4.0.0.RELEASE.jar
 org.eclipse.jst.jee.server\:bitcoin-analytics=/home/zackko/Applications/tomcat7/webapps/bitcoin-analytics
 org.eclipse.jst.jee.server\:/binary\:/home/zackko/.m2/repository/com/ocpsoft/prettyfaces-jsf2/3.3.3/prettyfaces-jsf2-3.3.3.jar=/home/zackko/Applications/tomcat7/webapps/bitcoin-analytics/WEB-INF/lib/prettyfaces-jsf2-3.3.3.jar
