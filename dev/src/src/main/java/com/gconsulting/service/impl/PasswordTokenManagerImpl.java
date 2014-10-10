@@ -4,26 +4,26 @@
 package com.gconsulting.service.impl;
 
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.time.DateUtils;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import com.gconsulting.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import com.gconsulting.model.User;
 
 /**
  * @author ivangsa
  */
 @Component("passwordTokenManager")
 public class PasswordTokenManagerImpl implements PasswordTokenManager {
-    private final Log log = LogFactory.getLog(PasswordTokenManagerImpl.class);
+   
+//	private final Log log = LogFactory.getLog(PasswordTokenManagerImpl.class);
 
     private final SimpleDateFormat expirationTimeFormat = new SimpleDateFormat("yyyyMMddHHmm");
     private final int expirationTimeTokenLength = expirationTimeFormat.toPattern().length();

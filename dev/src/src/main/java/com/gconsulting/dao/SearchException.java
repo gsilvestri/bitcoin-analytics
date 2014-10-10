@@ -6,7 +6,12 @@ package com.gconsulting.dao;
  */
 public class SearchException extends RuntimeException {
 
-    public SearchException(Throwable ex) {
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 2301416116467856341L;
+
+	public SearchException(Throwable ex) {
         super(ex);
     }
 

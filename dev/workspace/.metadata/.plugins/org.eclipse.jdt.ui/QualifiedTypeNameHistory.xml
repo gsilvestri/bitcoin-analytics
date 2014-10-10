@@ -1,2 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.gconsulting.model.ids.FeeTypeId"/>
+<fullyQualifiedTypeName name="com.gconsulting.model.FeeType"/>
+<fullyQualifiedTypeName name="com.gconsulting.model.ids.FeeId"/>
+<fullyQualifiedTypeName name="javax.persistence.JoinColumns"/>
+<fullyQualifiedTypeName name="com.gconsulting.model.Exchange"/>
+<fullyQualifiedTypeName name="org.primefaces.model.map.Marker"/>
+<fullyQualifiedTypeName name="com.gconsulting.model.Market"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+</qualifiedTypeNameHistroy>

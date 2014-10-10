@@ -9,6 +9,6 @@
 <booleanAttribute key="org.eclipse.jdt.launching.DEFAULT_CLASSPATH" value="false"/>
 <stringAttribute key="org.eclipse.jdt.launching.JRE_CONTAINER" value="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/java-7-openjdk-amd64"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="start"/>
-<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Dcatalina.base=&quot;/home/zackko/Applications/tomcat7&quot; -Dcatalina.home=&quot;/home/zackko/Applications/tomcat7&quot; -Dwtp.deploy=&quot;/home/zackko/Applications/tomcat7/webapps&quot; -Djava.endorsed.dirs=&quot;/home/zackko/Applications/tomcat7/endorsed&quot;"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Dcatalina.base=&quot;/home/zackko/Applications/tomcat7&quot;&#10;-Dcatalina.home=&quot;/home/zackko/Applications/tomcat7&quot;&#10;-Dwtp.deploy=&quot;/home/zackko/Applications/tomcat7/webapps&quot;&#10;-Djava.endorsed.dirs=&quot;/home/zackko/Applications/tomcat7/endorsed&quot;&#10;-Xrunjdwp:transport=dt_socket,address=9001,server=y,suspend=n"/>
 <stringAttribute key="server-id" value="Tomcat v7.0 Server at localhost"/>
 </launchConfiguration>

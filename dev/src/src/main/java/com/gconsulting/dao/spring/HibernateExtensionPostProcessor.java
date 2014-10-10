@@ -46,9 +46,9 @@ import java.util.Properties;
  */
 public class HibernateExtensionPostProcessor implements BeanFactoryPostProcessor {
     private String sessionFactoryBeanName = "sessionFactory";
-    private List mappingResources;
-    private List annotatedClasses;
-    private List configLocations;
+    private List<?> mappingResources;
+    private List<?> annotatedClasses;
+    private List<?> configLocations;
     private Properties hibernateProperties;
 
     /**
@@ -67,7 +67,7 @@ public class HibernateExtensionPostProcessor implements BeanFactoryPostProcessor
                 PropertyValue propertyValue = propertyValues.getPropertyValue("mappingResources");
 
                 if (propertyValue == null) {
-                    propertyValue = new PropertyValue("mappingResources", new ArrayList());
+                    propertyValue = new PropertyValue("mappingResources", new ArrayList<Object>());
                     propertyValues.addPropertyValue(propertyValue);
                 }
 

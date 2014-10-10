@@ -13,7 +13,7 @@ import java.util.Comparator;
  *
  * @see org.apache.struts.util.LabelValueBean
  */
-public class LabelValue implements Comparable, Serializable {
+public class LabelValue implements Comparable<Object>, Serializable {
 
     private static final long serialVersionUID = 3689355407466181430L;
 
@@ -21,7 +21,7 @@ public class LabelValue implements Comparable, Serializable {
      * Comparator that can be used for a case insensitive sort of
      * <code>LabelValue</code> objects.
      */
-    public static final Comparator CASE_INSENSITIVE_ORDER = new Comparator() {
+    public static final Comparator<Object> CASE_INSENSITIVE_ORDER = new Comparator<Object>() {
         public int compare(Object o1, Object o2) {
             String label1 = ((LabelValue) o1).getLabel();
             String label2 = ((LabelValue) o2).getLabel();
@@ -30,8 +30,6 @@ public class LabelValue implements Comparable, Serializable {
     };
 
     // ----------------------------------------------------------- Constructors
-
-
     /**
      * Default constructor.
      */
@@ -51,8 +49,6 @@ public class LabelValue implements Comparable, Serializable {
     }
 
     // ------------------------------------------------------------- Properties
-
-
     /**
      * The property which supplies the option label visible to the end user.
      */
@@ -65,7 +61,6 @@ public class LabelValue implements Comparable, Serializable {
     public void setLabel(String label) {
         this.label = label;
     }
-
 
     /**
      * The property which supplies the value returned to the server.
@@ -80,9 +75,7 @@ public class LabelValue implements Comparable, Serializable {
         this.value = value;
     }
 
-
     // --------------------------------------------------------- Public Methods
-
     /**
      * Compare LabelValueBeans based on the label, because that's the human
      * viewable part of the object.

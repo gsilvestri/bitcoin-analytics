@@ -108,7 +108,6 @@ public class GenericDaoHibernate<T, PK extends Serializable> implements GenericD
     /**
      * {@inheritDoc}
      */
-    @SuppressWarnings("unchecked")
     public List<T> getAllDistinct() {
         Collection<T> result = new LinkedHashSet<T>(getAll());
         return new ArrayList<T>(result);
@@ -118,6 +117,7 @@ public class GenericDaoHibernate<T, PK extends Serializable> implements GenericD
      * {@inheritDoc}
      */
     public List<T> search(String searchTerm) throws SearchException {
+    	
         Session sess = getSession();
         FullTextSession txtSession = Search.getFullTextSession(sess);
 
