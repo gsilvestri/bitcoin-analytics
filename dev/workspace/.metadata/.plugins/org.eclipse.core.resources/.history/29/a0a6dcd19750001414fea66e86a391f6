@@ -1,0 +1,13 @@
+package com.gconsulting.webapp.model;
+
+import com.gconsulting.model.Market;
+
+public class Trade {
+	
+	private Market market;
+	private Double quantity;
+	private Double price;
+	private Double fee;
+	
+
+}

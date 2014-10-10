@@ -1,0 +1,9 @@
+package com.gconsulting.webapp.view;
+
+import java.io.Serializable;
+
+import com.gconsulting.webapp.action.BasePage;
+
+public class ArbitrageView extends BasePage implements Serializable {
+
+}
