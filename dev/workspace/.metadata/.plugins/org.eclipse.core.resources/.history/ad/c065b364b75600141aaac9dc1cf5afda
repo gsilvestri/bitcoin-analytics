@@ -1,0 +1,71 @@
+package com.gconsulting.dao.hibernate;
+
+import java.util.List;
+
+import org.hibernate.Query;
+import org.springframework.stereotype.Repository;
+
+import com.gconsulting.dao.ApiDao;
+import com.gconsulting.dao.ExchangeDao;
+import com.gconsulting.model.Exchange;
+import com.gconsulting.model.ids.FeeApiId;
+
+/**
+ * This class interacts with Hibernate session to save/delete and retrieve
+ * Exchange objects.
+ *
+ * @author <a href="mailto:gsit80@gmail.com">Giovanni Silvestri</a>
+ */
+@Repository("exchangeDao")
+@SuppressWarnings("unchecked")
+public class ApiDaoHibernate extends GenericDaoHibernate<Api, FeeApiId>
+		implements ApiDao {
+
+	public ApiDaoHibernate(Class<Api> persistentClass) {
+		super(persistentClass);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public Exchange getExchangeByCode(String code) {
+		
+		Query qry = getSession().createQuery(
+				"from Exchange e where e.code='" + code + "'");
+		if (qry.list() != null) {
+			if (qry.list().size() > 0) {
+				return (Exchange) qry.list().get(0);
+			}
+		}
+		return null;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+    public List<Exchange> getAll() {
+		return (List<Exchange>) getSession().createQuery(
+				"from Exchange").list();
+    }
+
+	/**
+	 * {@inheritDoc}
+	 */
+    public void create(Exchange exchange) {
+    	getSession().save(exchange);
+    }
+
+	/**
+	 * {@inheritDoc}
+	 */
+    public void update(Exchange exchange) {
+    	getSession().update(exchange);
+    }
+
+	/**
+	 * {@inheritDoc}
+	 */
+    public void delete(Exchange exchange) {
+    	getSession().delete(exchange);
+    }
+}

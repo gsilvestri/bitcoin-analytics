@@ -1,0 +1,35 @@
+package com.gconsulting.service;
+
+import com.gconsulting.dao.ExchangeDao;
+import com.gconsulting.dao.UserDao;
+import com.gconsulting.model.Exchange;
+import com.gconsulting.model.User;
+
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
+import java.util.List;
+
+
+/**
+ * Business Service Interface to handle communication between web and
+ * persistence layer.
+ *
+ * @author <a href="mailto:gsit80@gmail.com"></a>
+ */
+public interface ExchangeManager extends GenericManager<Exchange, String> {
+
+	/**
+     * Convenience method for testing - allows you to mock the DAO and set it on an interface.
+     * @param exchangeDao the ExchangeDao implementation to use
+     */
+    void setExchangeDao(ExchangeDao exchangeDao);
+
+    /**
+     * Retrieves an Exchange by code.  An exception is thrown if exchange not found
+     *
+     * @param code the identifier for the Echange
+     * @return Echange
+     */
+    Exchange getExchangeByCode(String code);
+}

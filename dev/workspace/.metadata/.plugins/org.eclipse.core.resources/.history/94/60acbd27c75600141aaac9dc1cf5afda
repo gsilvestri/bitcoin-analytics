@@ -1,0 +1,106 @@
+package com.gconsulting.dao;
+
+import java.util.List;
+
+import org.springframework.transaction.annotation.Transactional;
+
+import com.gconsulting.model.Exchange;
+import com.gconsulting.model.Market;
+
+/**
+ * Exchange Data Access Object (GenericDao) interface.
+ *
+ * @author <a href="mailto:gsit80@gmail.com">Giovanni Silvestri</a>
+ */
+public interface ExchangeDao {
+
+    /**
+     * Gets Exchange information based on code.
+     * 
+     * @param Code code of the exchange to be retrieved
+     * @return Exchange retrieved
+     * 
+     * @throws 
+     */
+    @Transactional
+    Exchange getExchangeByCode(String code);
+
+    /**
+     * Gets all Exchange entities in the db
+     * 
+     * @return List<Exchange> retrieved
+     * 
+     * @throws 
+     */
+    @Transactional
+    List<Exchange> getAllExchange();
+
+    /**
+     * Create a new Exchange
+     * 
+     * @throws 
+     */
+    @Transactional
+    void create(Exchange exchange);
+
+    /**
+     * Update an existing Exchange instance
+     * 
+     * @throws 
+     */
+    @Transactional
+    void update(Exchange exchange);
+
+    /**
+     * Delete an existing Exchange instance
+     * 
+     * @throws 
+     */
+    @Transactional
+    void delete(Exchange exchange);
+
+    /**
+     * Gets Market information based on code.
+     * 
+     * @param Code code of the market to be retrieved
+     * @return Market retrieved
+     * 
+     * @throws 
+     */
+    @Transactional
+    Market getMarketByCode(String code);
+
+    /**
+     * Gets all Market entities in the db
+     * 
+     * @return List<Market> retrieved
+     * 
+     * @throws 
+     */
+    @Transactional
+    List<Market> getAllMarket();
+
+    /**
+     * Create a new Market
+     * 
+     * @throws 
+     */
+    @Transactional
+    void create(Market market);
+
+    /**
+     * Update an existing Market instance
+     * 
+     * @throws 
+     */
+    @Transactional
+    void update(Market market);
+
+    /**
+     * Delete an existing Market instance
+     * 
+     * @throws 
+     */
+    @Transactional
+    void delete(Market market);
+}
