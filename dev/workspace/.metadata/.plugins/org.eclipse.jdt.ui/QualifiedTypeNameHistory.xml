@@ -6,6 +6,12 @@
 <fullyQualifiedTypeName name="javax.persistence.JoinColumns"/>
 <fullyQualifiedTypeName name="com.gconsulting.model.Exchange"/>
 <fullyQualifiedTypeName name="org.primefaces.model.map.Marker"/>
-<fullyQualifiedTypeName name="com.gconsulting.model.Market"/>
 <fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.lang.SuppressWarnings"/>
+<fullyQualifiedTypeName name="com.gconsulting.model.Market"/>
+<fullyQualifiedTypeName name="com.gconsulting.dao.MarketDao"/>
+<fullyQualifiedTypeName name="com.gconsulting.dao.ApiDao"/>
+<fullyQualifiedTypeName name="com.gconsulting.model.Api"/>
+<fullyQualifiedTypeName name="com.gconsulting.model.ids.FeeApiId"/>
+<fullyQualifiedTypeName name="com.gconsulting.model.Fee"/>
 </qualifiedTypeNameHistroy>
