@@ -18,7 +18,7 @@ import com.gconsulting.model.ids.FeeApiId;
  *
  * @author <a href="mailto:gsit80@gmail.com"></a>
  */
-public interface ExchangeManager extends GenericManager<Exchange, String> {
+public interface ExchangeManager {
 
 	/**
      * Convenience method for testing - allows you to mock the DAO and set it on an interface.

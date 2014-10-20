@@ -79,8 +79,9 @@ public class ExchangeDaoHibernate
 	 * {@inheritDoc}
 	 */
     public List<Exchange> getAllExchange() {
-		return (List<Exchange>) getSession().createQuery(
-				"from Exchange").list();
+		return (List<Exchange>) getSession().createCriteria(Exchange.class).list();
+//		return (List<Exchange>) getSession().createQuery(
+//				"from Exchange").list();
     }
 
 	/**

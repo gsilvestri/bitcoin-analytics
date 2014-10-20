@@ -13,164 +13,169 @@ import com.gconsulting.model.Market;
 import com.gconsulting.model.ids.FeeApiId;
 import com.gconsulting.service.ExchangeManager;
 
-
 /**
  * Implementation of ExchangeManager interface.
  *
  * @author <a href="mailto:gsit80@gmail.com">Giovanni Silvestri</a>
  */
 @Service("exchangeManager")
-public class ExchangeManagerImpl extends GenericManagerImpl<Exchange, String> 
-implements ExchangeManager {
-	
-    private ExchangeDao exchangeDao;
+public class ExchangeManagerImpl implements ExchangeManager {
 
-    @Override
-    @Autowired
-    public void setExchangeDao(final ExchangeDao exchangeDao) {
-        this.exchangeDao = exchangeDao;
-    }
+	private ExchangeDao exchangeDao;
 
-    /**
-     * {@inheritDoc}
-     */
-    public Exchange getExchangeByCode(String code) {
-    	return exchangeDao.getExchangeByCode(code);
-    }
+	public ExchangeManagerImpl() {
+	}
+
+	public ExchangeManagerImpl(ExchangeDao exchangeDao) {
+		this.exchangeDao = exchangeDao;
+	}
+
+	@Override
+	@Autowired
+	public void setExchangeDao(final ExchangeDao exchangeDao) {
+		this.exchangeDao = exchangeDao;
+	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-    public List<Exchange> getAllExchange() {
+	public Exchange getExchangeByCode(String code) {
+		return exchangeDao.getExchangeByCode(code);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public List<Exchange> getAllExchange() {
 		return exchangeDao.getAllExchange();
-    }
+	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-    public void create(Exchange exchange) {
-    	exchangeDao.create(exchange);
-    }
+	public void create(Exchange exchange) {
+		exchangeDao.create(exchange);
+	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-    public void update(Exchange exchange) {
-    	exchangeDao.update(exchange);
-    }
+	public void update(Exchange exchange) {
+		exchangeDao.update(exchange);
+	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-    public void delete(Exchange exchange) {
-    	exchangeDao.delete(exchange);
-    }
+	public void delete(Exchange exchange) {
+		exchangeDao.delete(exchange);
+	}
 
 	/**
 	 * {@inheritDoc}
 	 */
 	public Market getMarketByCode(String code) {
-		
+
 		return exchangeDao.getMarketByCode(code);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-    public List<Market> getAllMarket() {
-    	return exchangeDao.getAllMarket();
-    }
+	public List<Market> getAllMarket() {
+		return exchangeDao.getAllMarket();
+	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-    public void create(Market market) {
-    	exchangeDao.create(market);
-    }
+	public void create(Market market) {
+		exchangeDao.create(market);
+	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-    public void update(Market market) {
-    	exchangeDao.update(market);
-    }
+	public void update(Market market) {
+		exchangeDao.update(market);
+	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-    public void delete(Market market) {
-    	exchangeDao.delete(market);
-    }
+	public void delete(Market market) {
+		exchangeDao.delete(market);
+	}
 
 	/**
 	 * {@inheritDoc}
 	 */
 	public Api getApiById(FeeApiId id) {
-		
+
 		return exchangeDao.getApiById(id);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-    public List<Api> getAllApi() {
+	public List<Api> getAllApi() {
 		return exchangeDao.getAllApi();
-    }
+	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-    public void create(Api api) {
-    	exchangeDao.create(api);
-    }
+	public void create(Api api) {
+		exchangeDao.create(api);
+	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-    public void update(Api api) {
-    	exchangeDao.update(api);
-    }
+	public void update(Api api) {
+		exchangeDao.update(api);
+	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-    public void delete(Api api) {
-    	exchangeDao.delete(api);
-    }
+	public void delete(Api api) {
+		exchangeDao.delete(api);
+	}
 
 	/**
 	 * {@inheritDoc}
 	 */
 	public Fee getFeeById(FeeApiId id) {
-		
+
 		return exchangeDao.getFeeById(id);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-    public List<Fee> getAllFee() {
+	public List<Fee> getAllFee() {
 		return exchangeDao.getAllFee();
-    }
+	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-    public void create(Fee fee) {
-    	exchangeDao.create(fee);
-    }
+	public void create(Fee fee) {
+		exchangeDao.create(fee);
+	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-    public void update(Fee fee) {
-    	exchangeDao.update(fee);
-    }
+	public void update(Fee fee) {
+		exchangeDao.update(fee);
+	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-    public void delete(Fee fee) {
-    	exchangeDao.delete(fee);
-    }
+	public void delete(Fee fee) {
+		exchangeDao.delete(fee);
+	}
 }

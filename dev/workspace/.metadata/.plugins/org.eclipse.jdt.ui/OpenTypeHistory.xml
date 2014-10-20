@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
 <typeInfo handle="=bitcoin-analytics/src\/main\/java&lt;com.gconsulting.model{Fee.java[Fee" modifiers="1" timestamp="1412328631000"/>
+<typeInfo handle="=bitcoin-analytics/src\/test\/java&lt;com.gconsulting.webapp.action{BasePageTestCase.java[BasePageTestCase" modifiers="1025" timestamp="1411639478000"/>
+<typeInfo handle="=bitcoin-analytics/src\/main\/java&lt;com.gconsulting.webapp.action{BasePage.java[BasePage" modifiers="1" timestamp="1412295260000"/>
+<typeInfo handle="=bitcoin-analytics/\/usr\/lib\/jvm\/java-7-openjdk-amd64\/jre\/lib\/rt.jar&lt;java.io(Serializable.class[Serializable" modifiers="1537" timestamp="1410329186000"/>
 </typeInfoHistroy>
