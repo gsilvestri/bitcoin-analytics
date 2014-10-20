@@ -1,0 +1,33 @@
+package com.gconsulting.webapp.view;
+
+import java.io.Serializable;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+
+import com.gconsulting.service.ExchangeManager;
+import com.gconsulting.webapp.action.BasePage;
+
+public class ExchangesList extends BasePage implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4820984471948349094L;
+	
+	private ExchangeManager exchangeManager;
+
+	@Autowired
+	public void setExchangeManager(
+			@Qualifier("exchangeManager") ExchangeManager exchangeManager) {
+		this.exchangeManager = exchangeManager;
+	}
+
+	public ExchangesList() {
+		setSortColumn("code"); // sets the default sort column
+	}
+
+	public List<Exchange> getExchanges() {
+		return sort(exchangeManager.getAllExchange());
+	}
+}
