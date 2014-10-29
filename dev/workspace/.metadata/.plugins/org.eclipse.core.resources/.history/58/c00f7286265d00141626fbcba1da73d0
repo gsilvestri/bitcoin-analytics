@@ -1,0 +1,73 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui" xmlns:ui="http://java.sun.com/jsf/facelets">
+ 
+<ui:composition template="/layouts/default.xhtml">
+    <ui:define name="title">#{text['exchanges.title']}</ui:define>
+    <ui:param name="menu" value="AdminMenu"/>
+    <ui:define name="bodyId">exchangesList</ui:define>
+    <ui:define name="body">
+ 
+        <div class="col-sm-10">
+            <h2>#{text['exchanges.heading']}</h2>
+ 
+            <p>#{text['exchanges.message']}</p>
+ 
+            <h:form id="editPerson">
+            <div id="actions" class="btn-group">
+                <h:commandButton value="#{text['button.add']}" action="add" id="add" immediate="true" styleClass="btn btn-primary"/>
+                <h:commandButton value="#{text['button.done']}" action="home" id="cancel" immediate="true" styleClass="btn btn-default"/>
+            </div>
+ 
+            <p:dataTable id="exchanges" var="exchange" value="#{exchangeAction.exchanges}"
+                         sortBy="#{exchangeAction.sortColumn}" paginator="true" rows="25"
+                         paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                         rowsPerPageTemplate="5,10,15">
+                <p:column>
+                    <f:facet name="header">
+                        <p:column sortBy="exchangeCode">
+                            <h:outputText value="#{text['exchanges.code']}" />
+                        </p:column>
+                    </f:facet>
+                    <h:commandLink action="#{exchangeAction.selectExchange}" value="#{exchange.code}">
+                        <f:param name="code" value="#{exchange.code}"/>
+                    </h:commandLink>
+                </p:column>
+                <p:column>
+                    <f:facet name="header">
+                        <p:column sortBy="exchangeName">
+                            <h:outputText value="#{text['exchanges.name']}" />
+                        </p:column>
+                    </f:facet>
+                    <h:outputText value="#{exchange.name}" escape="true"/>
+                </p:column>
+                <p:column>
+                    <f:facet name="header">
+                        <p:column sortBy="exchangeDescription">
+                            <h:outputText value="#{text['exchanges.description']}" />
+                        </p:column>
+                    </f:facet>
+                    <h:outputText value="#{exchange.description}" escape="true"/>
+                </p:column>
+                <p:column>
+                    <f:facet name="header">
+                        <p:column sortBy="exchangeWebsite">
+                            <h:outputText value="#{text['exchanges.website']}" />
+                        </p:column>
+                    </f:facet>
+                    <h:outputText value="#{exchange.websiteAddress}" escape="true"/>
+                </p:column>
+                <p:column>
+                    <f:facet name="header">
+                        <p:column sortBy="exchangeAPI">
+                            <h:outputText value="#{text['exchanges.api']}" />
+                        </p:column>
+                    </f:facet>
+                    <h:outputText value="#{exchange.apiAddress}" escape="true"/>
+                </p:column>
+            </p:dataTable>
+            </h:form>
+        </div>
+    </ui:define>
+</ui:composition>
+</html>

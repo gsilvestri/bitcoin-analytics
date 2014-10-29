@@ -1,0 +1,5 @@
+package com.gconsulting.webapp.util;
+
+public class Constants {
+
+}
