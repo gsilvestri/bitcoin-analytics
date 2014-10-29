@@ -5,7 +5,6 @@
 <fullyQualifiedTypeName name="com.gconsulting.model.ids.FeeId"/>
 <fullyQualifiedTypeName name="javax.persistence.JoinColumns"/>
 <fullyQualifiedTypeName name="org.primefaces.model.map.Marker"/>
-<fullyQualifiedTypeName name="com.gconsulting.model.Market"/>
 <fullyQualifiedTypeName name="com.gconsulting.dao.MarketDao"/>
 <fullyQualifiedTypeName name="com.gconsulting.dao.ApiDao"/>
 <fullyQualifiedTypeName name="com.gconsulting.model.Api"/>
@@ -20,4 +19,5 @@
 <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
 <fullyQualifiedTypeName name="com.gconsulting.webapp.view.ExchangesList"/>
 <fullyQualifiedTypeName name="com.gconsulting.service.ExchangeManager"/>
+<fullyQualifiedTypeName name="com.gconsulting.model.Market"/>
 </qualifiedTypeNameHistroy>

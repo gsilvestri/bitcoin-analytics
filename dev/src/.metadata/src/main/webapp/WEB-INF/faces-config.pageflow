@@ -11,8 +11,10 @@
   <nodes xsi:type="pageflow:PFPage" name="passwordHint.xhtml" x="122" y="1330" id="pf141209522079120" referenceLink="//@navigationRule.7/@fromViewId|" outlinks="pf141209522079119" path="/passwordHint.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="admin/reload.xhtml" x="122" y="562" id="pf141209522079121" referenceLink="//@navigationRule.8/@fromViewId|" outlinks="pf14120952207914" path="/admin/reload.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="arbitrage.xhtml" id="pf141209522079122" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf14120952207915" path="/arbitrage.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="listExchanges.xhtml" id="pf14138010680953" referenceLink="//@navigationRule.10/@fromViewId|" outlinks="pf14138010680954" path="/listExchanges.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="addExchange.xhtml" id="pf14138010680955" referenceLink="//@navigationRule.10/@navigationCase.0/@toViewId|" inlinks="pf14138010680954" path="/addExchange.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="listExchanges.xhtml" id="pf14138010680953" referenceLink="//@navigationRule.13/@navigationCase.2/@toViewId|" outlinks="pf14143357571014 pf14143357571015" inlinks="pf14143357571016 pf14143357571017" path="/admin/listExchanges.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="admin/addExchange.xhtml" id="pf14143357571018" referenceLink="//@navigationRule.13/@navigationCase.1/@toViewId|" outlinks="pf14143357571016 pf14143357571019 pf14143357571017" inlinks="pf14143357571014 pf14143357571015 pf14143357571019" path="/admin/addExchange.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="admin/listMs.xhtml" id="pf14145196372690" referenceLink="//@navigationRule.13/@navigationCase.2/@toViewId|" outlinks="pf14145196372691 pf14145196372692" inlinks="pf14145196372693 pf14145196372694" path="/admin/listMarkets.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="admin/addMarket.xhtml" id="pf14145196372695" referenceLink="//@navigationRule.13/@fromViewId|" outlinks="pf14145196372693 pf14145196372696 pf14145196372694" inlinks="pf14145196372691 pf14145196372692 pf14145196372696" path="/admin/addMarket.xhtml"/>
   <links id="pf14120952207902" target="pf14120952207916" source="pf14120952207901" outcome="selectFile" redirect="true"/>
   <links id="pf14120952207903" target="pf14120952207901" source="pf14120952207918" outcome="home" redirect="true"/>
   <links id="pf14120952207919" target="pf141209522079110" source="pf14120952207918" outcome="editProfile"/>
@@ -28,5 +30,14 @@
     <bendPoints d1Width="-64" d2Width="-64"/>
   </links>
   <links id="pf14120952207915" target="pf14120952207901" source="pf141209522079122" outcome="home" redirect="true"/>
-  <links id="pf14138010680954" target="pf14138010680955" source="pf14138010680953" outcome="add"/>
+  <links id="pf14143357571014" target="pf14143357571018" source="pf14138010680953" outcome="add"/>
+  <links id="pf14143357571015" target="pf14143357571018" source="pf14138010680953" outcome="edit"/>
+  <links id="pf14143357571016" target="pf14138010680953" source="pf14143357571018" outcome="cancel" redirect="true"/>
+  <links id="pf14143357571019" target="pf14143357571018" source="pf14143357571018" outcome="edit"/>
+  <links id="pf14143357571017" target="pf14138010680953" source="pf14143357571018" outcome="list" redirect="true"/>
+  <links id="pf14145196372691" target="pf14145196372695" source="pf14145196372690" outcome="add"/>
+  <links id="pf14145196372692" target="pf14145196372695" source="pf14145196372690" outcome="edit"/>
+  <links id="pf14145196372693" target="pf14145196372690" source="pf14145196372695" outcome="cancel" redirect="true"/>
+  <links id="pf14145196372696" target="pf14145196372695" source="pf14145196372695" outcome="edit"/>
+  <links id="pf14145196372694" target="pf14145196372690" source="pf14145196372695" outcome="list" redirect="true"/>
 </pageflow:Pageflow>

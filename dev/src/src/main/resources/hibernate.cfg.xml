@@ -8,5 +8,9 @@
     <session-factory>
         <mapping class="com.gconsulting.model.User"/>
         <mapping class="com.gconsulting.model.Role"/>
+        <mapping class="com.gconsulting.model.Exchange"/>
+        <mapping class="com.gconsulting.model.Market"/>
+        <mapping class="com.gconsulting.model.Fee"/>
+        <mapping class="com.gconsulting.model.FeeApiType"/>
     </session-factory>
 </hibernate-configuration>

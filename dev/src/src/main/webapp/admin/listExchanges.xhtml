@@ -4,7 +4,7 @@
  
 <ui:composition template="/layouts/default.xhtml">
     <ui:define name="title">#{text['exchanges.title']}</ui:define>
-    <ui:param name="menu" value="PersonMenu"/>
+    <ui:param name="menu" value="AdminMenu"/>
     <ui:define name="bodyId">exchangesList</ui:define>
     <ui:define name="body">
  
@@ -13,7 +13,7 @@
  
             <p>#{text['exchanges.message']}</p>
  
-            <h:form id="editPerson">
+            <h:form id="editExchange">
             <div id="actions" class="btn-group">
                 <h:commandButton value="#{text['button.add']}" action="add" id="add" immediate="true" styleClass="btn btn-primary"/>
                 <h:commandButton value="#{text['button.done']}" action="home" id="cancel" immediate="true" styleClass="btn btn-default"/>
@@ -29,8 +29,9 @@
                             <h:outputText value="#{text['exchanges.code']}" />
                         </p:column>
                     </f:facet>
-                    <h:commandLink action="#{exchangeAction.selectExchange}" value="#{exchange.code}">
+                    <h:commandLink action="#{exchangeAction.edit}" value="#{exchange.code}">
                         <f:param name="code" value="#{exchange.code}"/>
+                        <!-- f:param name="isUpdate" value="true"/ -->
                     </h:commandLink>
                 </p:column>
                 <p:column>
@@ -47,7 +48,7 @@
                             <h:outputText value="#{text['exchanges.description']}" />
                         </p:column>
                     </f:facet>
-                    <h:outputText value="#{exchanges.description}" escape="true"/>
+                    <h:outputText value="#{exchange.description}" escape="true"/>
                 </p:column>
                 <p:column>
                     <f:facet name="header">
@@ -55,7 +56,7 @@
                             <h:outputText value="#{text['exchanges.website']}" />
                         </p:column>
                     </f:facet>
-                    <h:outputText value="#{exchanges.website}" escape="true"/>
+                    <h:outputText value="#{exchange.websiteAddress}" escape="true"/>
                 </p:column>
                 <p:column>
                     <f:facet name="header">
@@ -63,7 +64,7 @@
                             <h:outputText value="#{text['exchanges.api']}" />
                         </p:column>
                     </f:facet>
-                    <h:outputText value="#{exchanges.api}" escape="true"/>
+                    <h:outputText value="#{exchange.apiAddress}" escape="true"/>
                 </p:column>
             </p:dataTable>
             </h:form>
