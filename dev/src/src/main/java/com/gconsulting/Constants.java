@@ -13,7 +13,12 @@ public final class Constants {
     }
     //~ Static fields/initializers =============================================
 
-    /**
+	public static final String API_TYPE_PAIRS = "API - PAIRS";
+	public static final String API_TYPE_ORDERBOOK = "API - ORDERBOOK";
+	public static final String API_TYPE_TRADES = "API - TRADES";
+	public static final String API_TYPE_FUNDING = "API - FUNDING";
+
+	/**
      * Assets Version constant
      */
     public static final String ASSETS_VERSION = "assetsVersion";

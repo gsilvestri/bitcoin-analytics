@@ -8,8 +8,10 @@ import com.gconsulting.dao.ExchangeDao;
 import com.gconsulting.model.Api;
 import com.gconsulting.model.Exchange;
 import com.gconsulting.model.Fee;
+import com.gconsulting.model.FeeApiType;
 import com.gconsulting.model.Market;
 import com.gconsulting.model.ids.FeeApiId;
+import com.gconsulting.model.ids.FeeApiTypeId;
 
 
 /**
@@ -202,4 +204,49 @@ public interface ExchangeManager {
      */
     @Transactional
     void delete(Fee fee);
+
+    /**
+     * Gets Type information based on ids.
+     * 
+     * @param FeeApiTypeId id of the type to be retrieved
+     * @return FeeApiType retrieved
+     * 
+     * @throws 
+     */
+    @Transactional
+    FeeApiType getTypeById(FeeApiTypeId id);
+
+    /**
+     * Gets all FeeApiType entities in the db
+     * 
+     * @return List<FeeApiType> retrieved
+     * 
+     * @throws 
+     */
+    @Transactional
+    List<FeeApiType> getAllType();
+
+    /**
+     * Create a new FeeApiType
+     * 
+     * @throws 
+     */
+    @Transactional
+    void create(FeeApiType type);
+
+    /**
+     * Update an existing FeeApiType instance
+     * 
+     * @throws 
+     */
+    @Transactional
+    void update(FeeApiType type);
+
+    /**
+     * Delete an existing FeeApiType instance
+     * 
+     * @throws 
+     */
+    @Transactional
+    void delete(FeeApiType type);
 }

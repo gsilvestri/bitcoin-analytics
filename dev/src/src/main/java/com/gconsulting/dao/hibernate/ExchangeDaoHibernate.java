@@ -18,8 +18,10 @@ import com.gconsulting.dao.ExchangeDao;
 import com.gconsulting.model.Api;
 import com.gconsulting.model.Exchange;
 import com.gconsulting.model.Fee;
+import com.gconsulting.model.FeeApiType;
 import com.gconsulting.model.Market;
 import com.gconsulting.model.ids.FeeApiId;
+import com.gconsulting.model.ids.FeeApiTypeId;
 
 /**
  * This class interacts with Hibernate session to save/delete and retrieve
@@ -44,6 +46,7 @@ public class ExchangeDaoHibernate
     }
 
     public Session getSession() throws HibernateException {
+    	
         Session sess = getSessionFactory().getCurrentSession();
         if (sess == null) {
             sess = getSessionFactory().openSession();
@@ -153,7 +156,6 @@ public class ExchangeDaoHibernate
 	 * {@inheritDoc}
 	 */
 	public Api getApiById(FeeApiId id) {
-		
 		return (Api) getSession().get(Api.class, id);
 	}
 
@@ -190,7 +192,6 @@ public class ExchangeDaoHibernate
 	 * {@inheritDoc}
 	 */
 	public Fee getFeeById(FeeApiId id) {
-		
 		return (Fee) getSession().get(Fee.class, id);
 	}
 
@@ -221,5 +222,41 @@ public class ExchangeDaoHibernate
 	 */
     public void delete(Fee fee) {
     	getSession().delete(fee);
+    }
+
+	/**
+	 * {@inheritDoc}
+	 */
+    public FeeApiType getTypeById(FeeApiTypeId id){
+		return (FeeApiType) getSession().get(FeeApiType.class, id);    	
+    }
+
+	/**
+	 * {@inheritDoc}
+	 */
+    public List<FeeApiType> getAllType(){
+		return (List<FeeApiType>) getSession().createQuery(
+				"from FeeApiType").list();    	
+    }
+
+	/**
+	 * {@inheritDoc}
+	 */
+    public void create(FeeApiType type) {
+    	getSession().save(type);    	
+    }
+
+	/**
+	 * {@inheritDoc}
+	 */
+    public void update(FeeApiType type) {
+    	getSession().update(type);    	
+    }
+
+	/**
+	 * {@inheritDoc}
+	 */
+    public void delete(FeeApiType type) {
+    	getSession().delete(type);    	
     }
 }

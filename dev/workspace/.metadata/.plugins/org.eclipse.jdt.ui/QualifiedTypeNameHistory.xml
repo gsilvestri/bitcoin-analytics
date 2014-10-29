@@ -20,4 +20,8 @@
 <fullyQualifiedTypeName name="com.gconsulting.webapp.view.ExchangesList"/>
 <fullyQualifiedTypeName name="com.gconsulting.service.ExchangeManager"/>
 <fullyQualifiedTypeName name="com.gconsulting.model.Market"/>
+<fullyQualifiedTypeName name="com.gconsulting.model.FeeApiType"/>
+<fullyQualifiedTypeName name="com.gconsulting.model.ids.FeeApiTypeId"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="com.gconsulting.Constants"/>
 </qualifiedTypeNameHistroy>

@@ -9,6 +9,7 @@
         <Menu name="AdminMenu" title="menu.admin" description="Admin Menu" roles="ROLE_ADMIN" width="120" page="/admin/users">
 			<Item name="ExchangeMenu" title="menu.admin.exchanges" page="/admin/listExchanges"/>
 			<Item name="MarketMenu" title="menu.admin.markets" page="/admin/listMarkets"/>
+			<Item name="TypeMenu" title="menu.admin.types" page="/admin/listTypes"/>
         	<Item name="UserMenu" title="menu.user" description="User Menu" page="/editProfile"/>
             <Item name="ViewUsers" title="menu.admin.users" page="/admin/users"/>
             <Item name="ActiveUsers" title="home.activeUsers" page="/admin/activeUsers"/>

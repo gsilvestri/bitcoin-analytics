@@ -21,7 +21,6 @@ public class ExchangesAction extends BasePage implements Serializable {
 	 */
 	private static final long serialVersionUID = 4820984471948349094L;
 
-//	private boolean isUpdate;
 	private ExchangeManager exchangeManager;
 	private Exchange selectedExchange = new Exchange();
 	private String code;

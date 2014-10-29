@@ -9,8 +9,10 @@ import com.gconsulting.dao.ExchangeDao;
 import com.gconsulting.model.Api;
 import com.gconsulting.model.Exchange;
 import com.gconsulting.model.Fee;
+import com.gconsulting.model.FeeApiType;
 import com.gconsulting.model.Market;
 import com.gconsulting.model.ids.FeeApiId;
+import com.gconsulting.model.ids.FeeApiTypeId;
 import com.gconsulting.service.ExchangeManager;
 
 /**
@@ -178,4 +180,39 @@ public class ExchangeManagerImpl implements ExchangeManager {
 	public void delete(Fee fee) {
 		exchangeDao.delete(fee);
 	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+    public FeeApiType getTypeById(FeeApiTypeId id){
+		return exchangeDao.getTypeById(id);
+    }
+
+	/**
+	 * {@inheritDoc}
+	 */
+    public List<FeeApiType> getAllType(){
+		return exchangeDao.getAllType();
+    }
+
+	/**
+	 * {@inheritDoc}
+	 */
+    public void create(FeeApiType type) {
+		exchangeDao.create(type);
+    }
+
+	/**
+	 * {@inheritDoc}
+	 */
+    public void update(FeeApiType type) {
+		exchangeDao.update(type);
+    }
+
+	/**
+	 * {@inheritDoc}
+	 */
+    public void delete(FeeApiType type) {
+		exchangeDao.delete(type);
+    }
 }

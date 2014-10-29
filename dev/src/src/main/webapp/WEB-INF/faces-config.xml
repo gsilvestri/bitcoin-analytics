@@ -170,6 +170,34 @@
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/admin/listTypes.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>add</from-outcome>
+			<to-view-id>/admin/addType.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>edit</from-outcome>
+			<to-view-id>/admin/addType.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/admin/addType.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>cancel</from-outcome>
+			<to-view-id>/admin/listTypes.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>edit</from-outcome>
+			<to-view-id>/admin/addType.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>list</from-outcome>
+			<to-view-id>/admin/listTypes.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
 	<!-- Add additional rules here -->
 
 	<managed-bean>
