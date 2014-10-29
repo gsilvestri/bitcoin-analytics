@@ -1,0 +1,48 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui" xmlns:ui="http://java.sun.com/jsf/facelets">
+      
+      
+<ui:composition template="/layouts/default.xhtml">
+    <ui:define name="title">#{text['types.add.title']}</ui:define>
+    <ui:param name="menu" value="AdminMenu"/>
+ 
+    <ui:define name="body">
+        <script type="text/javascript">
+            var msgDelConfirm = "<h:outputFormat value="#{text['delete.confirm']}"><f:param value="Type"/></h:outputFormat>";
+        </script>
+ 
+        <div class="col-sm-3">
+            <h2>#{text['types.add.heading']}</h2>
+        </div>
+ 
+        <div class="col-sm-7">
+            <h:form id="typeForm" styleClass="well">
+                <!-- h:inputHidden value="#{typeAction.selectedType.market.code}" id="selectedMarketCode"/>
+                <h:inputHidden value="#{typeAction.selectedType.type}" id="selectedTypeType"/ -->
+                <div class="form-group">
+                    <h:outputLabel styleClass="control-label" for="market" value="#{text['types.market']}"/>
+					<h:selectOneMenu value="#{typeAction.selectedMarket}">
+   						<f:selectItems value="#{typeAction.markets}" />
+   					</h:selectOneMenu>
+                </div>
+                <div class="form-group">
+                    <h:outputLabel styleClass="control-label" for="type" value="#{text['types.type']}"/>
+					<h:selectOneMenu value="#{typeAction.selectedType.type}">
+   						<f:selectItems value="#{typeAction.typesTypes}" />
+   					</h:selectOneMenu>
+                </div>
+                <div class="form-group">
+                    <h:commandButton value="#{text['button.save']}" action="#{typeAction.save}"
+                                     id="save" styleClass="btn btn-primary"/>
+                    <h:commandButton value="#{text['button.delete']}" action="#{typeAction.delete}"
+                                     id="delete" styleClass="btn btn-default"
+                                     onclick="return confirmMessage(msgDelConfirm)"/>
+                    <h:commandButton value="#{text['button.cancel']}" action="cancel" immediate="true"
+                                     id="cancel" styleClass="btn btn-default"/>
+                </div>
+            </h:form>
+        </div>
+    </ui:define>
+</ui:composition>
+</html>
