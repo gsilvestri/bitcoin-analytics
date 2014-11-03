@@ -1,0 +1,127 @@
+package com.gconsulting.webapp.action;
+
+import java.io.Serializable;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+import com.gconsulting.model.API;
+import com.gconsulting.model.Exchange;
+import com.gconsulting.model.FeeApiType;
+import com.gconsulting.model.Market;
+import com.gconsulting.model.ids.FeeApiId;
+import com.gconsulting.model.ids.FeeApiTypeId;
+import com.gconsulting.service.ExchangeManager;
+
+@SuppressWarnings("unchecked")
+@Scope("request")
+@Component("apisAction")
+public class APIsAction extends BasePage implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7276861502829761813L;
+	private ExchangeManager exchangeManager;
+	private API selectedAPI = new API();
+	private String exchangeCode;
+	private String typeType;
+	private String typeMarketCode;
+
+	@Autowired
+	public void setExchangeManager(
+			@Qualifier("exchangeManager") ExchangeManager exchangeManager) {
+		this.exchangeManager = exchangeManager;
+	}
+
+	public APIsAction() {
+		setSortColumn("exchange.code"); // sets the default sort column
+//		isUpdate = false;
+	}
+
+	public List<API> getAPIs() {
+		return sort(exchangeManager.getAllApi());
+	}
+
+	public API getSelectedAPI() {
+		return selectedAPI;
+	}
+
+	public void setSelectedAPI(API selectedAPI) {
+		this.selectedAPI = selectedAPI;
+	}
+
+	public String getExchangeCode() {
+		return exchangeCode;
+	}
+
+	public void setExchangeCode(String exchangeCode) {
+		this.exchangeCode = exchangeCode;
+	}
+
+	public String getTypeType() {
+		return typeType;
+	}
+
+	public void setTypeType(String typeType) {
+		this.typeType = typeType;
+	}
+
+	public String getTypeMarketCode() {
+		return typeMarketCode;
+	}
+
+	public void setTypeMarketCode(String typeMarketCode) {
+		this.typeMarketCode = typeMarketCode;
+	}
+
+	public String delete() {
+
+		exchangeManager.delete(selectedAPI);
+		addMessage("apis.deleted");
+		return "list";
+	}
+
+	public String edit() {
+
+		if (exchangeCode == null) {
+			exchangeCode = new String(getParameter("exchangeCode"));
+		}
+		if (typeMarketCode == null) {
+			typeMarketCode = new String(getParameter("marketCode"));
+		}
+		if (typeType == null) {
+			typeType = new String(getParameter("type"));
+		}
+		Exchange selectedExchange = exchangeManager.getExchangeByCode(exchangeCode);
+		Market selectedMarket = exchangeManager.getMarketByCode(typeMarketCode);
+		FeeApiType apiType = new FeeApiType(typeType, selectedMarket);
+		selectedAPI = exchangeManager.getApiById(new FeeApiId(selectedExchange, apiType));
+		return "edit";
+	}
+
+	public String save() {
+
+		String key = new String("");
+		Exchange selectedExchange = exchangeManager.getExchangeByCode(exchangeCode);
+		Market selectedMarket = exchangeManager.getMarketByCode(typeMarketCode);
+		FeeApiType apiType = new FeeApiType(typeType, selectedMarket);
+		FeeApiId apiId = new FeeApiId(selectedExchange, apiType); 
+		boolean isUpdate = 
+				(exchangeManager.getTypeById(new FeeApiTypeId(selectedType.getType(), 
+						selectedType.getMarket())) == null) ? false : true; 
+
+		if(!isUpdate) {
+			exchangeManager.create(selectedAPI);
+			key = "apis.added";
+		} else {
+			exchangeManager.update(selectedAPI);
+			key = "apis.updated";			
+		}
+		addMessage(key);
+			return "list";			
+	}
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MenuConfig>
+    <Displayers>
+        <Displayer name="Velocity" type="net.sf.navigator.displayer.VelocityMenuDisplayer"/>
+    </Displayers>
+    <Menus>
+        <Menu name="Home" title="home.title" page="/home" roles="ROLE_ADMIN,ROLE_USER"/>
+		<Menu name="ArbitrageMenu" title="menu.arbitrage" page="/arbitrage" roles="ROLE_ADMIN,ROLE_USER"/>
+        <Menu name="AdminMenu" title="menu.admin" page="/settings/listExchanges" roles="ROLE_ADMIN">
+			<Item name="ExchangeMenu" title="menu.admin.exchanges" page="/settings/listExchanges"/>
+			<Item name="MarketMenu" title="menu.admin.markets" page="/settings/listMarkets"/>
+			<Item name="TypeMenu" title="menu.admin.types" page="/settings/listTypes"/>
+			<Item name="APIMenu" title="menu.admin.apis" page="/settings/listAPIs"/>
+        </Menu>
+        <Menu name="UserMenu" title="menu.user" page="/myProfile/editProfile" roles="ROLE_ADMIN,ROLE_USER">
+        	<Item name="UserMenu" title="menu.user" page="/myProfile/editProfile"/>
+            <Item name="ViewUsers" title="menu.admin.users" page="/myProfile/users"/>
+            <Item name="ActiveUsers" title="home.activeUsers" page="/myProfile/activeUsers"/>
+            <Item name="FileUpload" title="menu.selectFile" page="/myProfile/selectFile"/>
+            <!-- Item name="ReloadContext" title="menu.admin.reload" page="/admin/reload"/ -->
+	        <Item name="Logout" title="user.logout" description="Logout" page="/myProfile/logout"/>
+        </Menu>
+    </Menus>
+</MenuConfig>

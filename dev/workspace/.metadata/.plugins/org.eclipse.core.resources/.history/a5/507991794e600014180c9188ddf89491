@@ -1,0 +1,36 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui" xmlns:ui="http://java.sun.com/jsf/facelets">
+      
+      
+<ui:composition template="/layouts/default.xhtml">
+    <ui:define name="title">#{text['markets.import.title']}</ui:define>
+    <ui:param name="menu" value="AdminMenu"/>
+ 
+    <ui:define name="body">
+        <script type="text/javascript">
+            var msgDelConfirm = "<h:outputFormat value="#{text['delete.confirm']}"><f:param value="Market"/></h:outputFormat>";
+        </script>
+ 
+        <div class="col-sm-3">
+            <h2>#{text['markets.import.heading']}</h2>
+        </div>
+ 
+        <div class="col-sm-7">
+            <h:form id="marketForm" styleClass="well">
+                <div class="form-group">
+                    <h:outputLabel styleClass="control-label" for="code" value="#{text['markets.import.source']}: "/>
+                    <h:inputText id="source" value="#{marketAction.selectedSource}" styleClass="form-control"
+                                 maxlength="255"/>
+                </div>
+                <div class="form-group">
+                    <h:commandButton value="#{text['button.import']}" action="#{marketAction.import}"
+                                     id="import" styleClass="btn btn-primary"/>
+                    <h:commandButton value="#{text['button.cancel']}" action="cancel" immediate="true"
+                                     id="cancel" styleClass="btn btn-default"/>
+                </div>
+            </h:form>
+        </div>
+    </ui:define>
+</ui:composition>
+</html>

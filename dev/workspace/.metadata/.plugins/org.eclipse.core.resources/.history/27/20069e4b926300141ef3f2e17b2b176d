@@ -1,0 +1,75 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui" xmlns:ui="http://java.sun.com/jsf/facelets">
+ 
+<ui:composition template="/layouts/default.xhtml">
+    <ui:define name="title">#{text['fees.title']}</ui:define>
+    <ui:param name="menu" value="AdminMenu"/>
+    <ui:define name="bodyId">feesList</ui:define>
+    <ui:define name="body">
+ 
+        <div class="col-sm-10">
+            <h2>#{text['fees.heading']}</h2>
+ 
+            <p>#{text['fees.message']}</p>
+ 
+            <h:form id="listFee">
+            <div id="actions" class="btn-group">
+                <h:commandButton value="#{text['button.add']}" action="add" id="add" immediate="true" styleClass="btn btn-primary"/>
+                <h:commandButton value="#{text['button.done']}" action="home" id="cancel" immediate="true" styleClass="btn btn-default"/>
+            </div>
+ 
+            <p:dataTable id="fees" var="fee" value="#{feesAction.Fees}"
+                         sortBy="#{feesAction.sortColumn}" paginator="true" rows="25"
+                         paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                         rowsPerPageTemplate="5,10,15">
+                <p:column>
+                    <f:facet name="header">
+                        <p:column sortBy="exchangeCode">
+                            <h:outputText value="#{text['fees.exchangeCode']}" />
+                        </p:column>
+                    </f:facet>
+                    <h:commandLink action="#{feesAction.edit}" value="#{fee.exchange.code}">
+                        <f:param name="exchangeCode" value="#{fee.exchange.code}"/>
+                        <f:param name="marketCode" value="#{fee.feeType.market.code}"/>
+                        <f:param name="type" value="#{fee.feeType.type}"/>
+                    </h:commandLink>
+                </p:column>
+                <p:column>
+                    <f:facet name="header">
+                        <p:column sortBy="marketCode">
+                            <h:outputText value="#{text['fees.marketCode']}" />
+                        </p:column>
+                    </f:facet>
+                    <h:outputText value="#{fee.feeType.market.code}" escape="true"/>
+                </p:column>
+                <p:column>
+                    <f:facet name="header">
+                        <p:column sortBy="type">
+                            <h:outputText value="#{text['fees.type']}" />
+                        </p:column>
+                    </f:facet>
+                    <h:outputText value="#{fee.feeType.type}" escape="true"/>
+                </p:column>
+                <p:column>
+                    <f:facet name="header">
+                        <p:column sortBy="unit">
+                            <h:outputText value="#{text['fees.unit']}" />
+                        </p:column>
+                    </f:facet>
+                    <h:outputText value="#{fee.unit}" escape="true"/>
+                </p:column>
+                <p:column>
+                    <f:facet name="header">
+                        <p:column sortBy="value">
+                            <h:outputText value="#{text['fees.value']}" />
+                        </p:column>
+                    </f:facet>
+                    <h:outputText value="#{fee.value}" escape="true"/>
+                </p:column>
+            </p:dataTable>
+            </h:form>
+        </div>
+    </ui:define>
+</ui:composition>
+</html>

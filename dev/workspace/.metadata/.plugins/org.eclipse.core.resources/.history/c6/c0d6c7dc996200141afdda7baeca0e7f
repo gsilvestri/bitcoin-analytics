@@ -1,0 +1,126 @@
+package com.gconsulting.webapp.action;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+
+import com.gconsulting.Constants;
+import com.gconsulting.model.API;
+import com.gconsulting.model.Exchange;
+import com.gconsulting.model.FeeApiType;
+import com.gconsulting.model.Market;
+import com.gconsulting.service.ExchangeManager;
+
+public class APIsActionTest extends BasePageTestCase {
+
+	private APIsAction bean;
+	@Autowired
+	@Qualifier("exchangeManager")
+	private ExchangeManager exchangeManager;
+
+	@Override
+	@Before
+	public void onSetUp() {
+
+		super.onSetUp();
+		bean = new APIsAction();
+		bean.setExchangeManager(exchangeManager);
+
+		Exchange exchange = new Exchange();
+		exchange.setCode("TSTEXC");
+		exchange.setDescription("This is a Test Exchange");
+		Market market = new Market();
+		market.setCode("TSTMKT");
+		market.setDescription("This is a Test Market");
+		FeeApiType type = new FeeApiType();
+		type.setMarket(market);
+		type.setType(Constants.API_TYPE_ORDERBOOK);
+		API api = new API();
+		api.setExchange(exchange);
+		api.setFeeType(type);
+		api.setAddress("http://www.test.tst/rest/api");
+		exchangeManager.create(api);
+	}
+
+	@Override
+	@After
+	public void onTearDown() {
+		super.onTearDown();
+		bean = null;
+	}
+
+	@Test
+	public void testSearch() throws Exception {
+		assertTrue(bean.getAPIs().size() >= 1);
+		assertFalse(bean.hasErrors());
+	}
+
+	@Test
+	public void testAdd() throws Exception {
+
+		Exchange exchange = new Exchange();
+		exchange.setCode("TSTEXC2");
+		exchange.setDescription("This is a Test Exchange 2");
+		Market market = new Market();
+		market.setCode("TSTMKT2");
+		market.setDescription("This is a Test Market 2");
+		FeeApiType type = new FeeApiType();
+		type.setMarket(market);
+		type.setType(Constants.API_TYPE_ORDERBOOK);
+		API api = new API();
+		api.setExchange(exchange);
+		api.setFeeType(type);
+		api.setAddress("http://www.test.tst/rest/api");
+		bean.setSelectedAPI(api);
+		assertEquals("list", bean.save());
+		assertFalse(bean.hasErrors());
+	}
+
+	@Test
+	public void testEdit() throws Exception {
+
+		log.debug("testing edit...");
+		bean.setExchangeCode("TSTEXC");
+		bean.setTypeMarket("TSTMKT");
+		bean.setTypeType(Constants.API_TYPE_ORDERBOOK);
+		assertEquals("edit", bean.edit());
+		assertNotNull(bean.getSelectedAPI());
+		assertFalse(bean.hasErrors());
+	}
+
+	@Test
+	public void testSave() {
+
+		bean.setMarketCode("TSTMKT");
+		bean.setType(Constants.API_TYPE_ORDERBOOK);
+		assertEquals("edit", bean.edit());
+		assertNotNull(bean.getSelectedType());
+		FeeApiType type = bean.getSelectedType();
+		// update fields
+		type.setType(Constants.API_TYPE_TRADES);
+		bean.setSelectedType(type);
+		assertEquals("edit", bean.save());
+		assertFalse(bean.hasErrors());
+	}
+
+	@Test
+	public void testRemove() throws Exception {
+
+		Market market = new Market();
+		market.setCode("TSTMKT2");
+		market.setDescription("This is a Test Market");
+		FeeApiType type = new FeeApiType();
+		type.setMarket(market);
+		type.setType(Constants.API_TYPE_ORDERBOOK);
+		bean.setSelectedType(type);
+		assertEquals("list", bean.delete());
+		assertFalse(bean.hasErrors());
+	}
+}

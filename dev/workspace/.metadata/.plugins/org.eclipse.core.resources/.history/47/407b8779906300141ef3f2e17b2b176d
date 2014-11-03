@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14120911436010" configfile="/bitcoin-analytics/src/main/webapp/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="home.xhtml" x="338" y="562" id="pf14120952207901" referenceLink="//@navigationRule.8/@navigationCase.0/@toViewId|" outlinks="pf14150394821547" inlinks="pf14120952207903 pf14120952207915 pf14150394821548" path="/home.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="*" x="122" y="178" id="pf14120952207918" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf14120952207903 pf14150394821549" path="/*"/>
+  <nodes xsi:type="pageflow:PFPage" name="signup.xhtml" x="122" y="946" id="pf141209522079116" referenceLink="//@navigationRule.6/@fromViewId|" outlinks="pf141209522079117" path="/signup.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="login" x="338" y="1138" id="pf141209522079118" referenceLink="//@navigationRule.7/@navigationCase.0/@toViewId|" inlinks="pf141209522079117 pf141209522079119" path="/login"/>
+  <nodes xsi:type="pageflow:PFPage" name="passwordHint.xhtml" x="122" y="1330" id="pf141209522079120" referenceLink="//@navigationRule.7/@fromViewId|" outlinks="pf141209522079119" path="/passwordHint.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="arbitrage.xhtml" id="pf141209522079122" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf14120952207915" path="/arbitrage.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="listExchanges.xhtml" id="pf14138010680953" referenceLink="//@navigationRule.11/@navigationCase.2/@toViewId|" outlinks="pf141503948215410 pf141503948215411" inlinks="pf141503948215412 pf141503948215413" path="/settings/listExchanges.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="admin/listMs.xhtml" id="pf14145196372690" referenceLink="//@navigationRule.13/@navigationCase.2/@toViewId|" outlinks="pf141503948215414 pf141503948215415 pf141503948215416" inlinks="pf141503948215417 pf141503948215418" path="/settings/listMarkets.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="admin/listTs.xhtml" id="pf14146017126915" referenceLink="//@navigationRule.15/@navigationCase.2/@toViewId|" outlinks="pf141503948215419 pf141503948215420" inlinks="pf141503948215421 pf141503948215422" path="/settings/listTypes.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="admin/listAs.xhtml" id="pf14149386462810" referenceLink="//@navigationRule.17/@navigationCase.2/@toViewId|" outlinks="pf141503948215423 pf141503948215424" inlinks="pf141503948215425 pf141503948215426" path="/settings/listAPIs.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="myProfile/selectFile.xhtml" id="pf141503948215427" referenceLink="//@navigationRule.5/@fromViewId|" outlinks="pf141503948215428" inlinks="pf14150394821547" path="/myProfile/selectFile.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="myProfile/userForm.xhtml" id="pf141503948215429" referenceLink="//@navigationRule.4/@fromViewId|" outlinks="pf141503948215430 pf141503948215431" inlinks="pf14150394821549" path="/myProfile/userForm.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="myProfile/users.xhtml" id="pf141503948215432" referenceLink="//@navigationRule.9/@navigationCase.0/@toViewId|" outlinks="pf141503948215433" inlinks="pf141503948215430 pf141503948215431 pf141503948215433" path="/myProfile/users.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="myProfile/showFile.xhtml" id="pf141503948215434" referenceLink="//@navigationRule.5/@navigationCase.0/@toViewId|" inlinks="pf141503948215428" path="/myProfile/showFile.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="myProfile/reload.xhtml" id="pf141503948215435" referenceLink="//@navigationRule.8/@fromViewId|" outlinks="pf14150394821548" path="/myProfile/reload.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="settings/addExchange.xhtml" id="pf141503948215436" referenceLink="//@navigationRule.11/@fromViewId|" outlinks="pf141503948215412 pf141503948215437 pf141503948215413" inlinks="pf141503948215410 pf141503948215411 pf141503948215437" path="/settings/addExchange.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="settings/addMarket.xhtml" id="pf141503948215438" referenceLink="//@navigationRule.13/@fromViewId|" outlinks="pf141503948215417 pf141503948215439 pf141503948215418" inlinks="pf141503948215414 pf141503948215416 pf141503948215439" path="/settings/addMarket.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="settings/importMarket.xhtml" id="pf141503948215440" referenceLink="//@navigationRule.12/@navigationCase.1/@toViewId|" inlinks="pf141503948215415" path="/settings/importMarket.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="settings/addType.xhtml" id="pf141503948215441" referenceLink="//@navigationRule.15/@fromViewId|" outlinks="pf141503948215421 pf141503948215542 pf141503948215422" inlinks="pf141503948215419 pf141503948215420 pf141503948215542" path="/settings/addType.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="settings/addAPI.xhtml" id="pf141503948215543" referenceLink="//@navigationRule.17/@fromViewId|" outlinks="pf141503948215425 pf141503948215544 pf141503948215426" inlinks="pf141503948215423 pf141503948215424 pf141503948215544" path="/settings/addAPI.xhtml"/>
+  <links id="pf14120952207903" target="pf14120952207901" source="pf14120952207918" outcome="home" redirect="true"/>
+  <links id="pf141209522079117" target="pf141209522079118" source="pf141209522079116" outcome="cancel" redirect="true"/>
+  <links id="pf141209522079119" target="pf141209522079118" source="pf141209522079120" outcome="success" redirect="true"/>
+  <links id="pf14120952207915" target="pf14120952207901" source="pf141209522079122" outcome="home" redirect="true"/>
+  <links id="pf14150394821547" target="pf141503948215427" source="pf14120952207901" outcome="selectFile" redirect="true"/>
+  <links id="pf14150394821549" target="pf141503948215429" source="pf14120952207918" outcome="editProfile"/>
+  <links id="pf141503948215430" target="pf141503948215432" source="pf141503948215429" outcome="cancel" redirect="true"/>
+  <links id="pf141503948215431" target="pf141503948215432" source="pf141503948215429" outcome="list" redirect="true"/>
+  <links id="pf141503948215428" target="pf141503948215434" source="pf141503948215427" outcome="success"/>
+  <links id="pf14150394821548" target="pf14120952207901" source="pf141503948215435" outcome="success" redirect="true"/>
+  <links id="pf141503948215433" target="pf141503948215432" source="pf141503948215432" outcome="success" redirect="true"/>
+  <links id="pf141503948215410" target="pf141503948215436" source="pf14138010680953" outcome="add"/>
+  <links id="pf141503948215411" target="pf141503948215436" source="pf14138010680953" outcome="edit"/>
+  <links id="pf141503948215412" target="pf14138010680953" source="pf141503948215436" outcome="cancel" redirect="true"/>
+  <links id="pf141503948215437" target="pf141503948215436" source="pf141503948215436" outcome="edit"/>
+  <links id="pf141503948215413" target="pf14138010680953" source="pf141503948215436" outcome="list" redirect="true"/>
+  <links id="pf141503948215414" target="pf141503948215438" source="pf14145196372690" outcome="add"/>
+  <links id="pf141503948215415" target="pf141503948215440" source="pf14145196372690" outcome="import"/>
+  <links id="pf141503948215416" target="pf141503948215438" source="pf14145196372690" outcome="edit"/>
+  <links id="pf141503948215417" target="pf14145196372690" source="pf141503948215438" outcome="cancel" redirect="true"/>
+  <links id="pf141503948215439" target="pf141503948215438" source="pf141503948215438" outcome="edit"/>
+  <links id="pf141503948215418" target="pf14145196372690" source="pf141503948215438" outcome="list" redirect="true"/>
+  <links id="pf141503948215419" target="pf141503948215441" source="pf14146017126915" outcome="add"/>
+  <links id="pf141503948215420" target="pf141503948215441" source="pf14146017126915" outcome="edit"/>
+  <links id="pf141503948215421" target="pf14146017126915" source="pf141503948215441" outcome="cancel" redirect="true"/>
+  <links id="pf141503948215542" target="pf141503948215441" source="pf141503948215441" outcome="edit"/>
+  <links id="pf141503948215422" target="pf14146017126915" source="pf141503948215441" outcome="list" redirect="true"/>
+  <links id="pf141503948215423" target="pf141503948215543" source="pf14149386462810" outcome="add"/>
+  <links id="pf141503948215424" target="pf141503948215543" source="pf14149386462810" outcome="edit"/>
+  <links id="pf141503948215425" target="pf14149386462810" source="pf141503948215543" outcome="cancel" redirect="true"/>
+  <links id="pf141503948215544" target="pf141503948215543" source="pf141503948215543" outcome="edit"/>
+  <links id="pf141503948215426" target="pf14149386462810" source="pf141503948215543" outcome="list" redirect="true"/>
+</pageflow:Pageflow>

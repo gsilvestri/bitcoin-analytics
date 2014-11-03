@@ -1,0 +1,111 @@
+package com.gconsulting.webapp.action;
+
+import java.io.Serializable;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+import com.gconsulting.model.Market;
+import com.gconsulting.service.ExchangeManager;
+
+@SuppressWarnings("unchecked")
+@Scope("request")
+@Component("marketAction")
+public class MarketsAction extends BasePage implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8912270166877072337L;
+	private ExchangeManager exchangeManager;
+	private Market selectedMarket = new Market();
+	private String code;
+	private String importSource;
+
+	@Autowired
+	public void setExchangeManager(
+			@Qualifier("exchangeManager") ExchangeManager exchangeManager) {
+		this.exchangeManager = exchangeManager;
+	}
+
+	public MarketsAction() {
+		setSortColumn("code"); // sets the default sort column
+	}
+
+	public List<Market> getMarkets() {
+		return sort(exchangeManager.getAllMarket());
+	}
+
+	public Market getSelectedMarket() {
+		return selectedMarket;
+	}
+
+	public void setSelectedMarket(Market selectedMarket) {
+		this.selectedMarket = selectedMarket;
+	}
+
+	public String getCode() {
+		return code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getImportSource() {
+		return importSource;
+	}
+
+	public void setImportSource(String importSource) {
+		this.importSource = importSource;
+	}
+
+	public String importMarkets() {
+
+		String key = new String("");
+		boolean isUpdate = (exchangeManager.getMarketByCode(selectedMarket.getCode()) == null) ? false : true; 
+		if(!isUpdate) {
+			exchangeManager.create(selectedMarket);
+			key = "markets.added";
+		} else {
+			exchangeManager.update(selectedMarket);
+			key = "markets.updated";			
+		}
+		addMessage(key);
+		return "list";			
+	}
+
+	public String delete() {
+
+		exchangeManager.delete(selectedMarket);
+		addMessage("markets.deleted");
+		return "list";
+	}
+
+	public String edit() {
+
+		if (code == null) {
+			code = new String(getParameter("code"));
+		}
+		selectedMarket = exchangeManager.getMarketByCode(code);
+		return "edit";
+	}
+
+	public String save() {
+
+		String key = new String("");
+		boolean isUpdate = (exchangeManager.getMarketByCode(selectedMarket.getCode()) == null) ? false : true; 
+		if(!isUpdate) {
+			exchangeManager.create(selectedMarket);
+			key = "markets.added";
+		} else {
+			exchangeManager.update(selectedMarket);
+			key = "markets.updated";			
+		}
+		addMessage(key);
+			return "list";			
+	}
+}

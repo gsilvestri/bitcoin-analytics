@@ -1,0 +1,136 @@
+package com.gconsulting.webapp.action;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+
+import com.gconsulting.Constants;
+import com.gconsulting.model.Fee;
+import com.gconsulting.model.Exchange;
+import com.gconsulting.model.FeeApiType;
+import com.gconsulting.model.Market;
+import com.gconsulting.service.ExchangeManager;
+
+public class FeesActionTest extends BasePageTestCase {
+
+	private FeesAction bean;
+	@Autowired
+	@Qualifier("exchangeManager")
+	private ExchangeManager exchangeManager;
+
+	@Override
+	@Before
+	public void onSetUp() {
+
+		super.onSetUp();
+		bean = new FeesAction();
+		bean.setExchangeManager(exchangeManager);
+
+		Exchange exchange = new Exchange();
+		exchange.setCode("TSTEXC");
+		exchange.setDescription("This is a Test Exchange");
+		Market market = new Market();
+		market.setCode("TSTMKT");
+		market.setDescription("This is a Test Market");
+		FeeApiType type = new FeeApiType();
+		type.setMarket(market);
+		type.setType(Constants.FEE_TYPE_TRADE);
+		Fee fee = new Fee();
+		fee.setExchange(exchange);
+		fee.setFeeType(type);
+		fee.setUnit(Constants.FEE_UNIT_PERCENTAGE);
+		fee.setValue("0.50");
+		exchangeManager.create(fee);
+	}
+
+	@Override
+	@After
+	public void onTearDown() {
+		super.onTearDown();
+		bean = null;
+	}
+
+	@Test
+	public void testSearch() throws Exception {
+		assertTrue(bean.getFees().size() >= 1);
+		assertFalse(bean.hasErrors());
+	}
+
+	@Test
+	public void testAdd() throws Exception {
+
+		Exchange exchange = new Exchange();
+		exchange.setCode("TSTEXC2");
+		exchange.setDescription("This is a Test Exchange 2");
+		Market market = new Market();
+		market.setCode("TSTMKT2");
+		market.setDescription("This is a Test Market 2");
+		FeeApiType type = new FeeApiType();
+		type.setMarket(market);
+		type.setType(Constants.FEE_TYPE_TRADE);
+		Fee fee = new Fee();
+		fee.setExchange(exchange);
+		fee.setFeeType(type);
+		fee.setUnit(Constants.FEE_UNIT_PERCENTAGE);
+		fee.setValue("0.50");
+		bean.setSelectedFee(fee);
+		assertEquals("list", bean.save());
+		assertFalse(bean.hasErrors());
+	}
+
+	@Test
+	public void testEdit() throws Exception {
+
+		log.debug("testing edit...");
+		bean.setExchangeCode("TSTEXC");
+		bean.setType("TSTMKT - " + Constants.FEE_TYPE_TRADE);
+		assertEquals("edit", bean.edit());
+		assertNotNull(bean.getSelectedAPI());
+		assertFalse(bean.hasErrors());
+	}
+
+	@Test
+	public void testSave() {
+
+		bean.setExchangeCode("TSTEXC");
+		bean.setType("TSTMKT - " + Constants.FEE_TYPE_TRADE);
+		assertEquals("edit", bean.edit());
+		assertNotNull(bean.getSelectedFee());
+		Fee fee = bean.getSelectedFee();
+		// update fields
+		fee.setUnit(Constants.FEE_UNIT_EUR);
+		fee.setValue("0.90");
+		bean.setSelectedFee(fee);
+		assertEquals("edit", bean.save());
+		assertFalse(bean.hasErrors());
+	}
+
+	@Test
+	public void testRemove() throws Exception {
+
+		Exchange exchange = new Exchange();
+		exchange.setCode("TSTEXC2");
+		exchange.setDescription("This is a Test Exchange 2");
+		Market market = new Market();
+		market.setCode("TSTMKT2");
+		market.setDescription("This is a Test Market 2");
+		FeeApiType type = new FeeApiType();
+		type.setMarket(market);
+		type.setType(Constants.FEE_TYPE_TRADE);
+		Fee fee = new Fee();
+		fee.setExchange(exchange);
+		fee.setFeeType(type);
+		fee.setUnit(Constants.FEE_UNIT_PERCENTAGE);
+		fee.setValue("0.50");
+		bean.setSelectedFee(fee);
+		assertEquals("list", bean.delete());
+		assertFalse(bean.hasErrors());
+	}
+}

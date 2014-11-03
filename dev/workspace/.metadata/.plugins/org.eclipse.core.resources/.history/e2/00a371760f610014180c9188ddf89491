@@ -1,0 +1,34 @@
+package com.gconsulting.rest.model;
+
+public class BTCEPairs {
+
+	private String server_time;
+	private String pairs;
+
+	public BTCEPairs() {
+		super();
+	}
+
+	public BTCEPairs(String server_time, String pairs) {
+		super();
+		this.server_time = server_time;
+		this.pairs = pairs;
+	}
+
+	public String getServer_time() {
+		return server_time;
+	}
+
+	public void setServer_time(String server_time) {
+		this.server_time = server_time;
+	}
+
+	public String getPairs() {
+		return pairs;
+	}
+
+	public void setPairs(String pairs) {
+		this.pairs = pairs;
+	}
+
+}

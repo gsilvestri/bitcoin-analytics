@@ -1,0 +1,40 @@
+package com.gconsulting.rest;
+
+import java.net.URI;
+
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.Invocation.Builder;
+import javax.ws.rs.client.WebTarget;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+import javax.ws.rs.core.UriBuilder;
+
+import org.glassfish.jersey.client.ClientConfig;
+import org.glassfish.jersey.client.ClientResponse;
+
+public class ReadTest {
+
+	public static void main(String[] args) {
+
+		ClientConfig config = new ClientConfig();
+		Client client = ClientBuilder.newClient(config);
+		WebTarget target = client.target(getBaseURI());
+		Builder builder = target.path("pairs").request();
+	//	builder.accept(MediaType.APPLICATION_JSON);
+		ClientResponse response = builder.get(ClientResponse.class);
+		if (response.getStatus() != 200) {
+			throw new RuntimeException("Failed : HTTP error code : "
+					+ response.getStatus());
+		}
+		System.out.println("Server response: " + response.toString());
+		System.out.println("Response has Entity: " + response.hasEntity());
+		String result = (String) response.getEntity();
+		System.out.println("Response: " + result.toString());
+	}
+
+	private static URI getBaseURI() {
+
+		return UriBuilder.fromUri("https://www.allcoin.com/api2").build();
+	}
+}

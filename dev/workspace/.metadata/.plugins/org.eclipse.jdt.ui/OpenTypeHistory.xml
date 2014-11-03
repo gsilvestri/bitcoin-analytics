@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
-<typeInfo handle="=bitcoin-analytics/src\/main\/java&lt;com.gconsulting.model{Fee.java[Fee" modifiers="1" timestamp="1412328631000"/>
+<typeInfo handle="=bitcoin-analytics/src\/main\/java&lt;com.gconsulting.model{Fee.java[Fee" modifiers="1" timestamp="1415044571000"/>
 <typeInfo handle="=bitcoin-analytics/src\/test\/java&lt;com.gconsulting.webapp.action{BasePageTestCase.java[BasePageTestCase" modifiers="1025" timestamp="1411639478000"/>
 <typeInfo handle="=bitcoin-analytics/src\/main\/java&lt;com.gconsulting.webapp.action{BasePage.java[BasePage" modifiers="1" timestamp="1412295260000"/>
 <typeInfo handle="=bitcoin-analytics/\/usr\/lib\/jvm\/java-7-openjdk-amd64\/jre\/lib\/rt.jar&lt;java.io(Serializable.class[Serializable" modifiers="1537" timestamp="1410329186000"/>
-<typeInfo handle="=bitcoin-analytics/src\/main\/java&lt;com.gconsulting.webapp.action{TypesAction.java[TypesAction" modifiers="1" timestamp="1414601629000"/>
+<typeInfo handle="=bitcoin-analytics/\/home\/zackko\/.m2\/repository\/org\/primefaces\/primefaces\/5.0\/primefaces-5.0.jar&lt;org.primefaces.json(JSONObject.class[JSONObject" modifiers="33" timestamp="1411977093000"/>
+<typeInfo handle="=bitcoin-analytics/src\/main\/java&lt;com.gconsulting.model{Exchange.java[Exchange" modifiers="1" timestamp="1414922636000"/>
+<typeInfo handle="=bitcoin-analytics/\/home\/zackko\/.m2\/repository\/struts-menu\/struts-menu\/2.4.3\/struts-menu-2.4.3.jar&lt;net.sf.navigator.menu(MenuRepository.class[MenuRepository" modifiers="33" timestamp="1411259851000"/>
+<typeInfo handle="=bitcoin-analytics/src\/main\/java&lt;com.gconsulting.dao.hibernate{UserDaoHibernate.java[UserDaoHibernate" modifiers="1" timestamp="1412294787000"/>
+<typeInfo handle="=bitcoin-analytics/src\/main\/java&lt;com.gconsulting.webapp.action{TypesAction.java[TypesAction" modifiers="1" timestamp="1415044327000"/>
+<typeInfo handle="=bitcoin-analytics/src\/main\/java&lt;com.gconsulting.webapp.action{APIsAction.java[APIsAction" modifiers="1" timestamp="1415040833000"/>
+<typeInfo handle="=bitcoin-analytics/src\/main\/java&lt;com.gconsulting{Constants.java[Constants" modifiers="17" timestamp="1415044278000"/>
+<typeInfo handle="=bitcoin-analytics/src\/test\/java&lt;com.gconsulting.webapp.action{FeesActionTest.java[FeesActionTest" modifiers="1" timestamp="1415042796000"/>
 </typeInfoHistroy>

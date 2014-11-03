@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MenuConfig>
+    <Displayers>
+        <Displayer name="Velocity" type="net.sf.navigator.displayer.VelocityMenuDisplayer"/>
+    </Displayers>
+    <Menus>
+        <Menu name="Home" title="home.title" page="/home" roles="ROLE_ADMIN,ROLE_USER"/>
+		<Menu name="ArbitrageMenu" title="menu.arbitrage" page="/arbitrage" roles="ROLE_ADMIN,ROLE_USER"/>
+        <Menu name="AdminMenu" title="menu.admin" description="Admin Menu" page="/admin/listExchanges" roles="ROLE_ADMIN" width="120">
+			<Item name="ExchangeMenu" title="menu.admin.exchanges" page="/admin/listExchanges"/>
+			<Item name="MarketMenu" title="menu.admin.markets" page="/admin/listMarkets"/>
+			<Item name="TypeMenu" title="menu.admin.types" page="/admin/listTypes"/>
+        </Menu>
+        <Menu name="UserMenu" title="menu.user" page="/editProfile" roles="ROLE_ADMIN,ROLE_USER">
+        	<Item name="UserMenu" title="menu.user" description="User Menu" page="/editProfile"/>
+            <Item name="ViewUsers" title="menu.admin.users" page="/admin/users"/>
+            <Item name="ActiveUsers" title="home.activeUsers" page="/admin/activeUsers"/>
+            <Item name="FileUpload" title="menu.selectFile" page="/selectFile"/>
+            <Item name="ReloadContext" title="menu.admin.reload" page="/admin/reload"/>
+	        <Item name="Logout" title="user.logout" description="Logout" page="/logout"/>
+        </Menu>
+    </Menus>
+</MenuConfig>

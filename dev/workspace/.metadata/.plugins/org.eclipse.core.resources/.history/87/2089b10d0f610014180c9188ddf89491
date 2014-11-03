@@ -1,0 +1,5 @@
+package com.gconsulting.rest.model;
+
+public class BTCEPairs {
+
+}
