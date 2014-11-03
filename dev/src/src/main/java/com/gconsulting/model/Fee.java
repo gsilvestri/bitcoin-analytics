@@ -44,7 +44,7 @@ public class Fee extends BaseObject implements Serializable {
 	}
 
 	@Id
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "exchange", referencedColumnName = "code")
 	public Exchange getExchange() {
 		return exchange;
@@ -55,7 +55,7 @@ public class Fee extends BaseObject implements Serializable {
 	}
 
 	@Id
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumns({
 			@JoinColumn(name = "type_type", referencedColumnName = "type"),
 			@JoinColumn(name = "type_market", referencedColumnName = "market") })

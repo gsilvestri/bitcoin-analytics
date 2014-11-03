@@ -27,18 +27,20 @@ public class Exchange extends BaseObject implements Serializable {
     private String description;
     private String websiteAddress;
     private String apiAddress;
-
+    private Boolean restInterface;
+    
     public Exchange() {
     }
     
 	public Exchange(String code, String name, String description,
-			String websiteAddress, String apiAddress) {
+			String websiteAddress, String apiAddress, Boolean restInterface) {
 		super();
 		this.code = code;
 		this.name = name;
 		this.description = description;
 		this.websiteAddress = websiteAddress;
 		this.apiAddress = apiAddress;
+		this.restInterface = restInterface;
 	}
 
 	@Id
@@ -85,6 +87,15 @@ public class Exchange extends BaseObject implements Serializable {
 
 	public void setApiAddress(String apiAddress) {
 		this.apiAddress = apiAddress;
+	}
+
+    @Column(name = "interface")
+	public Boolean getRestInterface() {
+		return restInterface;
+	}
+
+	public void setRestInterface(Boolean restInterface) {
+		this.restInterface = restInterface;
 	}
 
 	@Override

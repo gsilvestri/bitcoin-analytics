@@ -66,6 +66,14 @@
                     </f:facet>
                     <h:outputText value="#{exchange.apiAddress}" escape="true"/>
                 </p:column>
+                <p:column>
+                    <f:facet name="header">
+                        <p:column sortBy="exchangeRestInterface">
+                            <h:outputText value="#{text['exchanges.restInterface']}: " />
+                        </p:column>
+                    </f:facet>
+			        <h:selectBooleanCheckbox value="#{exchange.restInterface}" disabled="true"/> 
+                </p:column>
             </p:dataTable>
             </h:form>
         </div>

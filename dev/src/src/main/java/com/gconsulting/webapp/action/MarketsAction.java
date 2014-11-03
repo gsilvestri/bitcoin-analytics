@@ -23,6 +23,7 @@ public class MarketsAction extends BasePage implements Serializable {
 	private ExchangeManager exchangeManager;
 	private Market selectedMarket = new Market();
 	private String code;
+	private String importSource;
 
 	@Autowired
 	public void setExchangeManager(
@@ -52,6 +53,27 @@ public class MarketsAction extends BasePage implements Serializable {
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public String getImportSource() {
+		return importSource;
+	}
+
+	public void setImportSource(String importSource) {
+		this.importSource = importSource;
+	}
+
+	public String importMarkets() {
+
+		String key = new String("");
+		boolean error = false;
+		if(!error) {
+			key = "markets.import.imported";
+		} else {
+			key = "markets.import.error";			
+		}
+		addMessage(key);
+		return "list";
 	}
 
 	public String delete() {

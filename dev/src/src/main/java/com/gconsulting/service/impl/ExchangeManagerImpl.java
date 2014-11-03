@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.gconsulting.dao.ExchangeDao;
-import com.gconsulting.model.Api;
+import com.gconsulting.model.API;
 import com.gconsulting.model.Exchange;
 import com.gconsulting.model.Fee;
 import com.gconsulting.model.FeeApiType;
@@ -112,7 +112,7 @@ public class ExchangeManagerImpl implements ExchangeManager {
 	/**
 	 * {@inheritDoc}
 	 */
-	public Api getApiById(FeeApiId id) {
+	public API getApiById(FeeApiId id) {
 
 		return exchangeDao.getApiById(id);
 	}
@@ -120,28 +120,28 @@ public class ExchangeManagerImpl implements ExchangeManager {
 	/**
 	 * {@inheritDoc}
 	 */
-	public List<Api> getAllApi() {
+	public List<API> getAllApi() {
 		return exchangeDao.getAllApi();
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-	public void create(Api api) {
+	public void create(API api) {
 		exchangeDao.create(api);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-	public void update(Api api) {
+	public void update(API api) {
 		exchangeDao.update(api);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-	public void delete(Api api) {
+	public void delete(API api) {
 		exchangeDao.delete(api);
 	}
 

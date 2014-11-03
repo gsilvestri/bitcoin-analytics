@@ -12,7 +12,9 @@
 
     <http auto-config="true">
         <intercept-url pattern="/login*" access="ROLE_ANONYMOUS"/>
-        <intercept-url pattern="/admin/**" access="ROLE_ADMIN"/>
+        <!-- intercept-url pattern="/admin/**" access="ROLE_ADMIN"/ -->
+        <intercept-url pattern="/settings/**" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/myProfile/**" access="ROLE_ADMIN,ROLE_USER"/>
         <intercept-url pattern="/passwordHint*" access="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER"/>
         <intercept-url pattern="/signup*" access="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER"/>
         <intercept-url pattern="/**/*.xhtml" access="ROLE_ADMIN,ROLE_USER"/>

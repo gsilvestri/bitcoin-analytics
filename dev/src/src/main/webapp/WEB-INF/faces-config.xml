@@ -35,7 +35,7 @@
 		<from-view-id>/home.xhtml</from-view-id>
 		<navigation-case>
 			<from-outcome>selectFile</from-outcome>
-			<to-view-id>/selectFile.xhtml</to-view-id>
+			<to-view-id>/myProfile/selectFile.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
@@ -59,27 +59,27 @@
 		<from-view-id>/*</from-view-id>
 		<navigation-case>
 			<from-outcome>editProfile</from-outcome>
-			<to-view-id>/userForm.xhtml</to-view-id>
+			<to-view-id>/myProfile/userForm.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 	<navigation-rule>
-		<from-view-id>/userForm.xhtml</from-view-id>
+		<from-view-id>/myProfile/userForm.xhtml</from-view-id>
 		<navigation-case>
 			<from-outcome>cancel</from-outcome>
-			<to-view-id>/admin/users.xhtml</to-view-id>
+			<to-view-id>/myProfile/users.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
 		<navigation-case>
 			<from-outcome>list</from-outcome>
-			<to-view-id>/admin/users.xhtml</to-view-id>
+			<to-view-id>/myProfile/users.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
 	<navigation-rule>
-		<from-view-id>/selectFile.xhtml</from-view-id>
+		<from-view-id>/myProfile/selectFile.xhtml</from-view-id>
 		<navigation-case>
 			<from-outcome>success</from-outcome>
-			<to-view-id>/showFile.xhtml</to-view-id>
+			<to-view-id>/myProfile/showFile.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 	<navigation-rule>
@@ -99,7 +99,7 @@
 		</navigation-case>
 	</navigation-rule>
 	<navigation-rule>
-		<from-view-id>/admin/reload.xhtml</from-view-id>
+		<from-view-id>/myProfile/reload.xhtml</from-view-id>
 		<navigation-case>
 			<from-outcome>success</from-outcome>
 			<to-view-id>/home.xhtml</to-view-id>
@@ -107,94 +107,154 @@
 		</navigation-case>
 	</navigation-rule>
 	<navigation-rule>
-		<from-view-id>/admin/users.xhtml</from-view-id>
+		<from-view-id>/myProfile/users.xhtml</from-view-id>
 		<navigation-case>
 			<from-outcome>success</from-outcome>
-			<to-view-id>/admin/users.xhtml</to-view-id>
+			<to-view-id>/myProfile/users.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
 	<navigation-rule>
-		<from-view-id>/admin/listExchanges.xhtml</from-view-id>
+		<from-view-id>/settings/listExchanges.xhtml</from-view-id>
 		<navigation-case>
 			<from-outcome>add</from-outcome>
-			<to-view-id>/admin/addExchange.xhtml</to-view-id>
+			<to-view-id>/settings/addExchange.xhtml</to-view-id>
 		</navigation-case>
 		<navigation-case>
 			<from-outcome>edit</from-outcome>
-			<to-view-id>/admin/addExchange.xhtml</to-view-id>
+			<to-view-id>/settings/addExchange.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 	<navigation-rule>
-		<from-view-id>/admin/addExchange.xhtml</from-view-id>
+		<from-view-id>/settings/addExchange.xhtml</from-view-id>
 		<navigation-case>
 			<from-outcome>cancel</from-outcome>
-			<to-view-id>/admin/listExchanges.xhtml</to-view-id>
+			<to-view-id>/settings/listExchanges.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
 		<navigation-case>
 			<from-outcome>edit</from-outcome>
-			<to-view-id>/admin/addExchange.xhtml</to-view-id>
+			<to-view-id>/settings/addExchange.xhtml</to-view-id>
 		</navigation-case>
 		<navigation-case>
 			<from-outcome>list</from-outcome>
-			<to-view-id>/admin/listExchanges.xhtml</to-view-id>
+			<to-view-id>/settings/listExchanges.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
 	<navigation-rule>
-		<from-view-id>/admin/listMarkets.xhtml</from-view-id>
+		<from-view-id>/settings/listMarkets.xhtml</from-view-id>
 		<navigation-case>
 			<from-outcome>add</from-outcome>
-			<to-view-id>/admin/addMarket.xhtml</to-view-id>
+			<to-view-id>/settings/addMarket.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>import</from-outcome>
+			<to-view-id>/settings/importMarket.xhtml</to-view-id>
 		</navigation-case>
 		<navigation-case>
 			<from-outcome>edit</from-outcome>
-			<to-view-id>/admin/addMarket.xhtml</to-view-id>
+			<to-view-id>/settings/addMarket.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 	<navigation-rule>
-		<from-view-id>/admin/addMarket.xhtml</from-view-id>
+		<from-view-id>/settings/addMarket.xhtml</from-view-id>
 		<navigation-case>
 			<from-outcome>cancel</from-outcome>
-			<to-view-id>/admin/listMarkets.xhtml</to-view-id>
+			<to-view-id>/settings/listMarkets.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
 		<navigation-case>
 			<from-outcome>edit</from-outcome>
-			<to-view-id>/admin/addMarket.xhtml</to-view-id>
+			<to-view-id>/settings/addMarket.xhtml</to-view-id>
 		</navigation-case>
 		<navigation-case>
 			<from-outcome>list</from-outcome>
-			<to-view-id>/admin/listMarkets.xhtml</to-view-id>
+			<to-view-id>/settings/listMarkets.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
 	<navigation-rule>
-		<from-view-id>/admin/listTypes.xhtml</from-view-id>
+		<from-view-id>/settings/listTypes.xhtml</from-view-id>
 		<navigation-case>
 			<from-outcome>add</from-outcome>
-			<to-view-id>/admin/addType.xhtml</to-view-id>
+			<to-view-id>/settings/addType.xhtml</to-view-id>
 		</navigation-case>
 		<navigation-case>
 			<from-outcome>edit</from-outcome>
-			<to-view-id>/admin/addType.xhtml</to-view-id>
+			<to-view-id>/settings/addType.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 	<navigation-rule>
-		<from-view-id>/admin/addType.xhtml</from-view-id>
+		<from-view-id>/settings/addType.xhtml</from-view-id>
 		<navigation-case>
 			<from-outcome>cancel</from-outcome>
-			<to-view-id>/admin/listTypes.xhtml</to-view-id>
+			<to-view-id>/settings/listTypes.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
 		<navigation-case>
 			<from-outcome>edit</from-outcome>
-			<to-view-id>/admin/addType.xhtml</to-view-id>
+			<to-view-id>/settings/addType.xhtml</to-view-id>
 		</navigation-case>
 		<navigation-case>
 			<from-outcome>list</from-outcome>
-			<to-view-id>/admin/listTypes.xhtml</to-view-id>
+			<to-view-id>/settings/listTypes.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/settings/listAPIs.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>add</from-outcome>
+			<to-view-id>/settings/addAPI.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>edit</from-outcome>
+			<to-view-id>/settings/addAPI.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/settings/addAPI.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>cancel</from-outcome>
+			<to-view-id>/settings/listAPIs.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>edit</from-outcome>
+			<to-view-id>/settings/addAPI.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>list</from-outcome>
+			<to-view-id>/settings/listAPIs.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/settings/listFees.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>add</from-outcome>
+			<to-view-id>/settings/addFee.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>edit</from-outcome>
+			<to-view-id>/settings/addFee.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/settings/addFee.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>cancel</from-outcome>
+			<to-view-id>/settings/listFees.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>edit</from-outcome>
+			<to-view-id>/settings/addFee.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>list</from-outcome>
+			<to-view-id>/settings/listFees.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
 	</navigation-rule>

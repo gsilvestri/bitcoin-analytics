@@ -1,5 +1,8 @@
 package com.gconsulting;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 /**
  * Constant values used throughout the application.
@@ -13,10 +16,38 @@ public final class Constants {
     }
     //~ Static fields/initializers =============================================
 
-	public static final String API_TYPE_PAIRS = "API - PAIRS";
-	public static final String API_TYPE_ORDERBOOK = "API - ORDERBOOK";
-	public static final String API_TYPE_TRADES = "API - TRADES";
-	public static final String API_TYPE_FUNDING = "API - FUNDING";
+	public static final String API_TYPE_PAIRS = "PAIRS";
+	public static final String API_TYPE_ORDERBOOK = "ORDERBOOK";
+	public static final String API_TYPE_TRADES = "TRADES";
+	public static final String API_TYPE_FUNDING = "FUNDING";
+	public static final String FEE_TYPE_TRADE = "TRADE";
+	public static final String FEE_TYPE_DEPOSIT = "DEPOSIT";
+	public static final String FEE_TYPE_WITHDRAW = "WITHDRAW";
+	public static final String FEE_UNIT_EUR = "€";
+	public static final String FEE_UNIT_USD = "$";
+	public static final String FEE_UNIT_PERCENTAGE = "%";
+	
+	public static List<String> getTypes() {
+		
+		List<String> types = new ArrayList<String>();
+		types.add(Constants.API_TYPE_PAIRS);
+		types.add(Constants.API_TYPE_ORDERBOOK);
+		types.add(Constants.API_TYPE_FUNDING);
+		types.add(Constants.API_TYPE_TRADES);
+		types.add(Constants.FEE_TYPE_TRADE);
+		types.add(Constants.FEE_TYPE_DEPOSIT);
+		types.add(Constants.FEE_TYPE_WITHDRAW);
+		return types;		
+	}
+
+	public static List<String> getFeeUnits() {
+		
+		List<String> types = new ArrayList<String>();
+		types.add(Constants.FEE_UNIT_EUR);
+		types.add(Constants.FEE_UNIT_USD);
+		types.add(Constants.FEE_UNIT_PERCENTAGE);
+		return types;		
+	}
 
 	/**
      * Assets Version constant

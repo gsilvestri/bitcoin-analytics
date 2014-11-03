@@ -54,13 +54,7 @@ public class TypesAction extends BasePage implements Serializable {
 	}
 
 	public List<String> getTypesTypes() {
-		
-		List<String> types = new ArrayList<String>();
-		types.add(Constants.API_TYPE_PAIRS);
-		types.add(Constants.API_TYPE_ORDERBOOK);
-		types.add(Constants.API_TYPE_FUNDING);
-		types.add(Constants.API_TYPE_TRADES);
-		return types;
+		return Constants.getTypes();
 	}
 
 	public FeeApiType getSelectedType() {

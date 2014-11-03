@@ -11,7 +11,7 @@
     <menu:displayMenu name="Home"/>
     <menu:displayMenu name="ArbitrageMenu"/>
     <menu:displayMenu name="AdminMenu"/>
-    <menu:displayMenu name="Logout"/>
+    <menu:displayMenu name="UserMenu"/>
 </ul>
 </div>
 </menu:useMenuDisplayer>

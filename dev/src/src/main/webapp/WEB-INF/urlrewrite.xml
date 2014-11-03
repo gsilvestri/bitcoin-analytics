@@ -64,8 +64,8 @@
         <to>/login.xhtml</to>
     </rule>
     <rule>
-        <from>/logout*</from>
-        <to>/logout.jsp</to>
+        <from>/myProfile/logout*</from>
+        <to>/myProfile/logout.jsp</to>
     </rule>
 
     <!-- JSF -->

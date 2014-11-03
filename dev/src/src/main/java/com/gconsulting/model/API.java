@@ -20,7 +20,7 @@ import com.gconsulting.model.ids.FeeApiId;
 @Entity
 @IdClass(FeeApiId.class)
 @Table(name = "api")
-public class Api extends BaseObject implements Serializable {
+public class API extends BaseObject implements Serializable {
 
 	/**
 	 * 
@@ -30,10 +30,10 @@ public class Api extends BaseObject implements Serializable {
 	private FeeApiType feeType;
 	private String address;
 
-	public Api() {
+	public API() {
 	}
 
-	public Api(Exchange exchange, FeeApiType feeType, String address) {
+	public API(Exchange exchange, FeeApiType feeType, String address) {
 
 		super();
 		this.exchange = exchange;
@@ -42,7 +42,7 @@ public class Api extends BaseObject implements Serializable {
 	}
 
 	@Id
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "exchange", referencedColumnName = "code")
 	public Exchange getExchange() {
 		return exchange;
@@ -53,7 +53,7 @@ public class Api extends BaseObject implements Serializable {
 	}
 
 	@Id
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumns({
 			@JoinColumn(name = "type_type", referencedColumnName = "type"),
 			@JoinColumn(name = "type_market", referencedColumnName = "market") })

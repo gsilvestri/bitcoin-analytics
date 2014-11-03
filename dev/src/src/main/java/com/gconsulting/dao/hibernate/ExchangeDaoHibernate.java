@@ -15,7 +15,7 @@ import org.springframework.beans.factory.annotation.Required;
 import org.springframework.stereotype.Repository;
 
 import com.gconsulting.dao.ExchangeDao;
-import com.gconsulting.model.Api;
+import com.gconsulting.model.API;
 import com.gconsulting.model.Exchange;
 import com.gconsulting.model.Fee;
 import com.gconsulting.model.FeeApiType;
@@ -155,36 +155,36 @@ public class ExchangeDaoHibernate
 	/**
 	 * {@inheritDoc}
 	 */
-	public Api getApiById(FeeApiId id) {
-		return (Api) getSession().get(Api.class, id);
+	public API getApiById(FeeApiId id) {
+		return (API) getSession().get(API.class, id);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-    public List<Api> getAllApi() {
-		return (List<Api>) getSession().createQuery(
-				"from Api").list();
+    public List<API> getAllApi() {
+		return (List<API>) getSession().createQuery(
+				"from API").list();
     }
 
 	/**
 	 * {@inheritDoc}
 	 */
-    public void create(Api api) {
+    public void create(API api) {
     	getSession().save(api);
     }
 
 	/**
 	 * {@inheritDoc}
 	 */
-    public void update(Api api) {
+    public void update(API api) {
     	getSession().update(api);
     }
 
 	/**
 	 * {@inheritDoc}
 	 */
-    public void delete(Api api) {
+    public void delete(API api) {
     	getSession().delete(api);
     }
 

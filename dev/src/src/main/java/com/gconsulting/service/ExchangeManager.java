@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.gconsulting.dao.ExchangeDao;
-import com.gconsulting.model.Api;
+import com.gconsulting.model.API;
 import com.gconsulting.model.Exchange;
 import com.gconsulting.model.Fee;
 import com.gconsulting.model.FeeApiType;
@@ -124,7 +124,7 @@ public interface ExchangeManager {
      * @throws 
      */
     @Transactional
-    Api getApiById(FeeApiId id);
+    API getApiById(FeeApiId id);
 
     /**
      * Gets all Api entities in the db
@@ -134,7 +134,7 @@ public interface ExchangeManager {
      * @throws 
      */
     @Transactional
-    List<Api> getAllApi();
+    List<API> getAllApi();
 
     /**
      * Create a new Api
@@ -142,7 +142,7 @@ public interface ExchangeManager {
      * @throws 
      */
     @Transactional
-    void create(Api api);
+    void create(API api);
 
     /**
      * Update an existing Api instance
@@ -150,7 +150,7 @@ public interface ExchangeManager {
      * @throws 
      */
     @Transactional
-    void update(Api api);
+    void update(API api);
 
     /**
      * Delete an existing Api instance
@@ -158,7 +158,7 @@ public interface ExchangeManager {
      * @throws 
      */
     @Transactional
-    void delete(Api api);
+    void delete(API api);
 
     /**
      * Gets Fee information based on code.
